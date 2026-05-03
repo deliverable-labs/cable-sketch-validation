@@ -1,8 +1,8 @@
 {
-  "version": "v0.1.0",
-  "reportPath": "reports/v0.1.0/report.json",
-  "summaryPath": "reports/v0.1.0/summary.md",
-  "generatedAt": "2026-05-03T17:35:15.620Z",
+  "version": "v0.1.1",
+  "reportPath": "reports/v0.1.1/report.json",
+  "summaryPath": "reports/v0.1.1/summary.md",
+  "generatedAt": "2026-05-03T18:28:19.823Z",
   "summary": {
     "total": 48,
     "active": 35,
