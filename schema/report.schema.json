@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/deliverable-labs/cable-sketch-validation/schema/report.schema.json",
+  "title": "NM-Calc Validation Report",
+  "description": "Structured record of all engine validation cases for one release of NM-Calc.",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "engineVersion", "engineMethod", "catalogVersion", "summary", "cases"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "description": "Semantic version of this schema.",
+      "const": "1.0.0"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the report was generated."
+    },
+    "engineVersion": {
+      "type": "string",
+      "description": "Version of the engine-nm package that produced these results."
+    },
+    "engineMethod": {
+      "type": "string",
+      "description": "Calculation method used (e.g. neher-mcgrath-1957)."
+    },
+    "catalogVersion": {
+      "type": "string",
+      "description": "Version of the catalog-data package used during the run."
+    },
+    "summary": {
+      "type": "object",
+      "required": ["total", "active", "passing", "expectedFail", "skipped", "failing"],
+      "additionalProperties": false,
+      "properties": {
+        "total":       { "type": "integer", "minimum": 0 },
+        "active":      { "type": "integer", "minimum": 0 },
+        "passing":     { "type": "integer", "minimum": 0 },
+        "expectedFail":{ "type": "integer", "minimum": 0 },
+        "skipped":     { "type": "integer", "minimum": 0 },
+        "failing":     { "type": "integer", "minimum": 0 }
+      }
+    },
+    "cases": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/reportCase" }
+    }
+  },
+  "$defs": {
+    "reportCase": {
+      "type": "object",
+      "required": ["id", "title", "citation", "sourceType", "tags", "status", "pass", "pdfUrl", "expectations"],
+      "additionalProperties": false,
+      "properties": {
+        "id":           { "type": "string" },
+        "title":        { "type": "string" },
+        "citation":     { "type": "string", "description": "Full bibliographic citation for the reference value." },
+        "sourceType":   { "type": "string", "enum": ["textbook", "nec-table", "cigre-tb880", "nm-paper", "hand-calc", "regression", "invariant"] },
+        "page":         { "type": ["string", "number", "null"] },
+        "tags":         { "type": "array", "items": { "type": "string" } },
+        "status":       { "type": "string", "enum": ["active", "skipped", "expected-fail"] },
+        "pass":         { "type": "boolean" },
+        "skipReason":   { "type": ["string", "null"] },
+        "pdfUrl":       { "type": ["string", "null"], "description": "URL of the per-case PDF report asset attached to the GitHub Release, or null if not yet generated." },
+        "engineVersion":  { "type": ["string", "null"] },
+        "engineMethod":   { "type": ["string", "null"] },
+        "catalogVersion": { "type": ["string", "null"] },
+        "computedAt":     { "type": ["string", "null"], "format": "date-time" },
+        "expectations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/reportExpectation" }
+        }
+      }
+    },
+    "reportExpectation": {
+      "type": "object",
+      "required": ["path", "pass"],
+      "additionalProperties": false,
+      "properties": {
+        "path":             { "type": "string", "description": "Dot-separated path into CalcResult." },
+        "expected":         { "description": "Expected value or range.", "oneOf": [{"type": "number"}, {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2}, {"type": "null"}] },
+        "actual":           { "description": "Value returned by the engine.", "oneOf": [{"type": "number"}, {"type": "null"}] },
+        "toleranceAbs":     { "type": ["number", "null"], "description": "Absolute tolerance band (±)." },
+        "toleranceRel":     { "type": ["number", "null"], "description": "Relative tolerance band as a fraction (e.g. 0.01 = ±1%)." },
+        "deviationPercent": { "type": ["number", "null"], "description": "(actual − expected) / |expected| × 100." },
+        "marginUsed":       { "type": ["number", "null"], "description": "|delta| / resolvedTolerance × 100. 0–100% = within band; >100% = outside." },
+        "pass":             { "type": "boolean" },
+        "note":             { "type": ["string", "null"] }
+      }
+    }
+  }
+}

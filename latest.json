@@ -1,0 +1,14 @@
+{
+  "version": "v0.1.0",
+  "reportPath": "reports/v0.1.0/report.json",
+  "summaryPath": "reports/v0.1.0/summary.md",
+  "generatedAt": "2026-05-03T17:35:15.620Z",
+  "summary": {
+    "total": 48,
+    "active": 35,
+    "passing": 35,
+    "expectedFail": 0,
+    "skipped": 13,
+    "failing": 0
+  }
+}
