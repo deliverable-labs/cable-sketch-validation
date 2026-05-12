@@ -1,12 +1,12 @@
 {
-  "version": "v0.1.4",
-  "reportPath": "reports/v0.1.4/report.json",
-  "summaryPath": "reports/v0.1.4/summary.md",
-  "generatedAt": "2026-05-03T19:23:58.490Z",
+  "version": "v0.1.5",
+  "reportPath": "reports/v0.1.5/report.json",
+  "summaryPath": "reports/v0.1.5/summary.md",
+  "generatedAt": "2026-05-12T13:33:31.897Z",
   "summary": {
-    "total": 48,
-    "active": 35,
-    "passing": 35,
+    "total": 68,
+    "active": 55,
+    "passing": 55,
     "expectedFail": 0,
     "skipped": 13,
     "failing": 0
