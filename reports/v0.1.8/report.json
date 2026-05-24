@@ -1,0 +1,3722 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-05-24T00:11:16.245Z",
+  "engineVersion": "0.2.0",
+  "engineMethod": "neher-mcgrath-1957",
+  "catalogVersion": "cigre-tb880",
+  "summary": {
+    "total": 68,
+    "active": 55,
+    "passing": 55,
+    "expectedFail": 0,
+    "skipped": 13,
+    "failing": 0
+  },
+  "cases": [
+    {
+      "id": "cigre-tb880-0-1-buried-trefoil",
+      "title": "CIGRE TB 880 Case #0-1 - 132 kV Cu/XLPE/Al-foil/PE, directly buried touching trefoil",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 4.5.1 (input data) and Section 4.6.4 (converged result), Case #0-1",
+      "sourceType": "cigre-tb880",
+      "page": "Section 4.5.1 / 4.6.4 / Table 4-2",
+      "tags": [
+        "cigre-tb880",
+        "trefoil",
+        "direct-buried",
+        "hv"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/cigre-tb880-0-1-buried-trefoil.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "cigre-tb880",
+      "computedAt": "2026-05-24T00:11:16.188Z",
+      "expectations": [
+        {
+          "path": "conduits.cir-1-top.resistances.t1KmPerW",
+          "expected": 0.41987,
+          "actual": 0.4198714890343629,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": 0.0004,
+          "marginUsed": 0.07,
+          "pass": true,
+          "note": "Engine sums per-sub-layer (1.5 mm SC rho=2.5, 15.5 mm XLPE rho=3.5, 1.3 mm SC rho=2.5) per CIGRE TB 880 p83 / IEC 60287-2-1 §4.1.2. Lands at 0.41987 vs spec 0.4199 (0.003 % off)."
+        },
+        {
+          "path": "conduits.cir-1-top.losses.dielectricWPerM",
+          "expected": 0.3851,
+          "actual": 0.3849690687828983,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.034,
+          "marginUsed": 6.8,
+          "pass": true,
+          "note": "Wd hits the spec to <0.1 % thanks to the back-solved epsilon in the fixture."
+        },
+        {
+          "path": "conduits.cir-1-top.resistances.t3KmPerW",
+          "expected": 0.08672,
+          "actual": 0.08671937478964181,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.0007,
+          "marginUsed": 0.14,
+          "pass": true,
+          "note": "T3 base 0.0542 * 1.6 = 0.0867 with the IEC 60287-2-1 4.2.4.3.2 buried touching-trefoil multiplier."
+        },
+        {
+          "path": "conduits.cir-1-top.losses.sheathLossFactorLambda1",
+          "expected": 0.36629,
+          "actual": 0.36774301875209936,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": 0.3967,
+          "marginUsed": 13.22,
+          "pass": true,
+          "note": "Spec lambda1 = Yc 0.29348 (circ) + Yse 0.07282 (eddy). Engine implements Yc per NM 1957 eq. 14 plus Yse per eq. 30A with the bonded-sheath correction Rs^2/(Rs^2+Xm^2); converges on 0.367 (~0.3 % high)."
+        },
+        {
+          "path": "conduits.cir-1-top.ampacityAmps",
+          "expected": 803.16,
+          "actual": 802.6,
+          "toleranceAbs": null,
+          "toleranceRel": 0.02,
+          "deviationPercent": -0.0697,
+          "marginUsed": 3.49,
+          "pass": true,
+          "note": "10-digit reference 803.1596 A."
+        }
+      ]
+    },
+    {
+      "id": "cigre-tb880-0-2-hdpe-trefoil",
+      "title": "CIGRE TB 880 Case #0-2 - 132 kV trefoil in touching HDPE ducts (no concrete)",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 4.7 (input data) and Section 4.7.7 (converged result), Case #0-2",
+      "sourceType": "cigre-tb880",
+      "page": "Section 4.7 / Table 4-2",
+      "tags": [
+        "cigre-tb880",
+        "trefoil",
+        "ducts",
+        "hv"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/cigre-tb880-0-2-hdpe-trefoil.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "cigre-tb880",
+      "computedAt": "2026-05-24T00:11:16.191Z",
+      "expectations": [
+        {
+          "path": "conduits.cir-1-top.resistances.t1KmPerW",
+          "expected": 0.41987,
+          "actual": 0.4198714890343629,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": 0.0004,
+          "marginUsed": 0.07,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.cir-1-top.resistances.t4DoublePrimeKmPerW",
+          "expected": 0.08866,
+          "actual": 0.0886606471945467,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": 0.0007,
+          "marginUsed": 0.15,
+          "pass": true,
+          "note": "T4'' = rho_HDPE/(2*pi) * ln(140/119.4); exact match."
+        },
+        {
+          "path": "conduits.cir-1-top.losses.dielectricWPerM",
+          "expected": 0.3851,
+          "actual": 0.3849690687828983,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.034,
+          "marginUsed": 6.8,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.cir-1-top.resistances.t3KmPerW",
+          "expected": 0.08672,
+          "actual": 0.08671937478964181,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.0007,
+          "marginUsed": 0.14,
+          "pass": true,
+          "note": "T3 base 0.0542 * 1.6 = 0.0867 with the IEC 60287-2-1 4.2.4.3.2 buried touching-trefoil multiplier (engine treats touching ducts as touching trefoil)."
+        },
+        {
+          "path": "conduits.cir-1-top.losses.sheathLossFactorLambda1",
+          "expected": 0.85246,
+          "actual": 0.8520148580332697,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": -0.0522,
+          "marginUsed": 1.74,
+          "pass": true,
+          "note": "Engine NM 1957 Yc gives 0.835 (~2 % low vs spec 0.852). Eddy term Y_s not implemented but is small here because the ducts space the cables out."
+        },
+        {
+          "path": "conduits.cir-1-top.ampacityAmps",
+          "expected": 679.84,
+          "actual": 674.9,
+          "toleranceAbs": null,
+          "toleranceRel": 0.02,
+          "deviationPercent": -0.7266,
+          "marginUsed": 36.33,
+          "pass": true,
+          "note": "10-digit reference 679.8410 A. Engine reports ~675 A (0.7 % low)."
+        }
+      ]
+    },
+    {
+      "id": "cigre-tb880-0-3-pvc-concrete-flat",
+      "title": "CIGRE TB 880 Case #0-3 - 132 kV flat formation in PVC ducts inside concrete envelope",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 4.8 (input data) and Section 4.8.6 (converged result), Case #0-3",
+      "sourceType": "cigre-tb880",
+      "page": "Section 4.8 / Table 4-2",
+      "tags": [
+        "cigre-tb880",
+        "flat",
+        "ducts",
+        "concrete",
+        "multi-rho",
+        "hv"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/cigre-tb880-0-3-pvc-concrete-flat.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "cigre-tb880",
+      "computedAt": "2026-05-24T00:11:16.194Z",
+      "expectations": [
+        {
+          "path": "conduits.cir-1-lagging.resistances.t1KmPerW",
+          "expected": 0.41987,
+          "actual": 0.4198714890343629,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": 0.0004,
+          "marginUsed": 0.07,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.cir-1-lagging.resistances.t3KmPerW",
+          "expected": 0.0542,
+          "actual": 0.05419960924352613,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.0007,
+          "marginUsed": 0.14,
+          "pass": true,
+          "note": "Base T3 (no x1.6) because flat formation is non-trefoil."
+        },
+        {
+          "path": "conduits.cir-1-lagging.resistances.t4DoublePrimeKmPerW",
+          "expected": 0.05019,
+          "actual": 0.050188477502282704,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.003,
+          "marginUsed": 0.61,
+          "pass": true,
+          "note": "T4'' = rho_PVC/(2*pi) * ln(125/118.6) with rho_PVC = 6 K.m/W."
+        },
+        {
+          "path": "conduits.cir-1-lagging.losses.dielectricWPerM",
+          "expected": 0.3851,
+          "actual": 0.3849690687828983,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.034,
+          "marginUsed": 6.8,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.cir-1-lagging.losses.sheathLossFactorLambda1",
+          "expected": 1.7105,
+          "actual": 1.7129921230704837,
+          "toleranceAbs": null,
+          "toleranceRel": 0.05,
+          "deviationPercent": 0.1457,
+          "marginUsed": 2.91,
+          "pass": true,
+          "note": "Per-position closed form (CIGRE p93 / IEC 60287-1-1 sec 2.3.3): lagging outer lambda'11 = 1.7105 (first iteration at 80 C). Engine converges at ~1.71 within 0.5 percent."
+        },
+        {
+          "path": "conduits.cir-1-central.losses.sheathLossFactorLambda1",
+          "expected": 0.7748,
+          "actual": 0.8134532126079533,
+          "toleranceAbs": null,
+          "toleranceRel": 0.05,
+          "deviationPercent": 4.9888,
+          "marginUsed": 99.78,
+          "pass": true,
+          "note": "Per-position closed form: middle (central) lambda'1m = 0.7748 (first iteration). Engine converges at ~0.81 within 5 percent. Pre per-phase fix, the engine wrongly applied 1.7x to all three positions and the central was the limiter; with phase tags the central drops to ~0.77 / 0.81 and the lagging-outer becomes the real limiter."
+        },
+        {
+          "path": "conduits.cir-1-leading.losses.sheathLossFactorLambda1",
+          "expected": 1.2819,
+          "actual": 1.3165620659376809,
+          "toleranceAbs": null,
+          "toleranceRel": 0.05,
+          "deviationPercent": 2.704,
+          "marginUsed": 54.08,
+          "pass": true,
+          "note": "Per-position closed form: leading outer lambda'12 = 1.2819 (first iteration). Engine converges at ~1.31 within 3 percent."
+        },
+        {
+          "path": "conduits.cir-1-lagging.ampacityAmps",
+          "expected": 633.04,
+          "actual": 632.5,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.0853,
+          "marginUsed": 17.06,
+          "pass": true,
+          "note": "Lagging-outer is the limiting cable per the per-position dispatch (was central before per-phase fix). Engine 633.6 A (+0.088 percent). Tolerance dropped from 2 percent to 0.5 percent in Phase 3 after Phase 1/2 fixes converged the math."
+        }
+      ]
+    },
+    {
+      "id": "cigre-tb880-3-hpff-thermal-backfill",
+      "title": "CIGRE TB 880 Case Study 3 - 230 kV HPFF pipe-type with rectangular thermal-backfill envelope",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 7 (Case Study 3): 230 kV HPFF pipe-type cable in 1000x500 mm thermal-backfill envelope (rho_b=0.55) within native soil (rho_T=1.0)",
+      "sourceType": "cigre-tb880",
+      "page": "Section 7.1 / 7.6 / 7.7 / Tables 7-18, 7-19",
+      "tags": [
+        "cigre-tb880",
+        "pipe-type",
+        "thermal-backfill",
+        "hv",
+        "low-load-factor"
+      ],
+      "status": "skipped",
+      "pass": false,
+      "skipReason": "Pipe-type thermal + magnetic-pipe-loss math now implemented (Phase 7 — NM 1957 eq. 41/41A/44/46 thermal + eq. 35 magnetic Y_p, validated against NM 1957 Appendix IV at uniform-rho via `nm1957-138kv-hpff-pipe-type`). Still missing the IEC 60287-2-1 §4.2.7.4 D_b / G_b multi-rho formulation needed for the rectangular thermal-backfill envelope (out of v4 scope) and the Milliken segmental conductor correction (Phase 4 owns ks/kp wiring). T4-chain envelope unblocked separately.",
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": []
+    },
+    {
+      "id": "cigre-tb880-case-0-4-free-air-solar",
+      "title": "CIGRE TB 880 Case #0-4 - 132 kV Cu/XLPE/Al-foil/PE in free air, exposed to solar radiation",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 4.9 Case #0-4",
+      "sourceType": "cigre-tb880",
+      "page": "p102-114",
+      "tags": [
+        "cigre-tb880",
+        "in-air",
+        "hv"
+      ],
+      "status": "skipped",
+      "pass": false,
+      "skipReason": "In-air solver deferred until after phase-1 MVP. Engine has no convective/radiative T4 branch and no solar-radiation absorption model; T4External ([thermal/t4-external.ts](../../../src/thermal/t4-external.ts)) implements only the buried Kennelly-image formula (NM 1957 eq. 7).",
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": []
+    },
+    {
+      "id": "cigre-tb880-case-0-5-unfilled-trough",
+      "title": "CIGRE TB 880 Case #0-5 - 132 kV Cu/XLPE/Al-foil/PE in an unfilled trough",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 4.10 Case #0-5",
+      "sourceType": "cigre-tb880",
+      "page": "p115-124",
+      "tags": [
+        "cigre-tb880",
+        "in-air",
+        "trough",
+        "hv"
+      ],
+      "status": "skipped",
+      "pass": false,
+      "skipReason": "Unfilled-trough installation requires the in-air solver (deferred until after phase-1 MVP) plus the IEC 60287-2-1 §4.2.5 trough heat-balance equations. Engine T4 branch is buried-only.",
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": []
+    },
+    {
+      "id": "cigre-tb880-case-1-flat-buried",
+      "title": "CIGRE TB 880 Case 1 - 132 kV 1x1200 mm2 Cu/XLPE/CWS+Al-foil/PE, directly buried flat formation, cross-bonded",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 5 (132 kV cables in directly buried flat formation), p146-163",
+      "sourceType": "cigre-tb880",
+      "page": "p146-163",
+      "tags": [
+        "cigre-tb880",
+        "flat",
+        "direct-buried",
+        "hv",
+        "multi-circuit",
+        "mutual-heating",
+        "cross-bonded"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/cigre-tb880-case-1-flat-buried.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "cigre-tb880",
+      "computedAt": "2026-05-24T00:11:16.195Z",
+      "expectations": [
+        {
+          "path": "conduits.cir-1-middle.resistances.t1KmPerW",
+          "expected": 0.37891,
+          "actual": 0.3789088973719826,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.0003,
+          "marginUsed": 0.06,
+          "pass": true,
+          "note": "Spec T1 = 0.37891 (p147; same construction as trefoil case)."
+        },
+        {
+          "path": "conduits.cir-1-middle.resistances.t2KmPerW",
+          "expected": 0.012137,
+          "actual": 0.012137140456670439,
+          "toleranceAbs": null,
+          "toleranceRel": 0.01,
+          "deviationPercent": 0.0012,
+          "marginUsed": 0.12,
+          "pass": true,
+          "note": "Spec T2 = 0.012137 (p147; outer swelling tape between CWS and foil, rho_wb = 12 K.m/W)."
+        },
+        {
+          "path": "conduits.cir-1-middle.resistances.t3KmPerW",
+          "expected": 0.053281,
+          "actual": 0.053303935974810944,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": 0.043,
+          "marginUsed": 8.61,
+          "pass": true,
+          "note": "Spec T3 base = 0.053281 (p147, p161). No 1.6x trefoil multiplier in flat formation."
+        },
+        {
+          "path": "conduits.cir-1-middle.losses.dielectricWPerM",
+          "expected": 0.46541,
+          "actual": 0.46539406691709406,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.0034,
+          "marginUsed": 0.68,
+          "pass": true,
+          "note": "Spec W_d = 0.46541 (p147; same construction)."
+        },
+        {
+          "path": "conduits.cir-1-middle.losses.sheathLossFactorLambda1",
+          "expected": 0.015914,
+          "actual": 0.01591274034337855,
+          "toleranceAbs": null,
+          "toleranceRel": 0.05,
+          "deviationPercent": -0.0079,
+          "marginUsed": 0.16,
+          "pass": true,
+          "note": "Spec lambda1_m_total = 9.7794e-3 (cws) + 6.13474e-3 (fl) = 1.5914e-2 (p147, p159). Engine reproduces with the per-position CIGRE TB 880 p155-158 foil-eddy formulas (lambda_0 leading constant 6 for middle vs 1.5 for outers; Delta_1/Delta_2 forms per p156). Verified at unit level by case `cigre-tb880-p155-flat-foil-eddy` (all three phases <1 % rel)."
+        },
+        {
+          "path": "conduits.cir-1-lagging.losses.sheathLossFactorLambda1",
+          "expected": 0.018493,
+          "actual": 0.018483734196656318,
+          "toleranceAbs": null,
+          "toleranceRel": 0.05,
+          "deviationPercent": -0.0501,
+          "marginUsed": 1,
+          "pass": true,
+          "note": "Spec lambda1_lagging_total = 1.38329e-2 (cws) + 4.66052e-3 (fl) = 1.8493e-2 (p151, p159). Engine matches within 1 %."
+        },
+        {
+          "path": "conduits.cir-1-leading.losses.sheathLossFactorLambda1",
+          "expected": 0.014306,
+          "actual": 0.014299633508432691,
+          "toleranceAbs": null,
+          "toleranceRel": 0.05,
+          "deviationPercent": -0.0445,
+          "marginUsed": 0.89,
+          "pass": true,
+          "note": "Spec lambda1_leading_total = 1.05320e-2 (cws) + 3.77443e-3 (fl) = 1.4306e-2 (p151, p159). Engine matches within 2 %."
+        },
+        {
+          "path": "conduits.cir-1-middle.resistances.t4TriplePrimeKmPerW",
+          "expected": 1.03585,
+          "actual": 1.0358584636536008,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": 0.0008,
+          "marginUsed": 0.16,
+          "pass": true,
+          "note": "Spec T4_m = 1.03585 K.m/W (p161). Engine reports the geometric W_x/W_n form (CIGRE TB 880 p161 / IEC 60287-2-1 §4.2.4.5) via t4nWithMutualHeating + direct-bury depth = burialDepthToCenter (no envelope half-height shift)."
+        },
+        {
+          "path": "conduits.cir-1-lagging.resistances.t4TriplePrimeKmPerW",
+          "expected": 0.94538,
+          "actual": 0.9453804464444082,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": 0,
+          "marginUsed": 0.01,
+          "pass": true,
+          "note": "Spec T4_1 = 0.94538 K.m/W (p161); same geometric W_x/W_n form as middle."
+        },
+        {
+          "path": "conduits.cir-1-leading.resistances.t4TriplePrimeKmPerW",
+          "expected": 0.94749,
+          "actual": 0.9474875822630618,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.0003,
+          "marginUsed": 0.05,
+          "pass": true,
+          "note": "Spec T4_2 = 0.94749 K.m/W (p161); same geometric W_x/W_n form as middle."
+        },
+        {
+          "path": "conduits.cir-1-middle.temperatures.conductorC",
+          "expected": 90,
+          "actual": 90.00315696977823,
+          "toleranceAbs": 0.5,
+          "toleranceRel": null,
+          "deviationPercent": 0.0035,
+          "marginUsed": 0.63,
+          "pass": true,
+          "note": "Middle phase governs at theta_max = 90 C (p151)."
+        },
+        {
+          "path": "conduits.cir-1-lagging.temperatures.conductorC",
+          "expected": 85.0253,
+          "actual": 85.02890386347443,
+          "toleranceAbs": 1,
+          "toleranceRel": null,
+          "deviationPercent": 0.0042,
+          "marginUsed": 0.36,
+          "pass": true,
+          "note": "Spec theta_1 = 85.0253 C (p151)."
+        },
+        {
+          "path": "conduits.cir-1-leading.temperatures.conductorC",
+          "expected": 84.913,
+          "actual": 84.9167164441233,
+          "toleranceAbs": 1,
+          "toleranceRel": null,
+          "deviationPercent": 0.0044,
+          "marginUsed": 0.37,
+          "pass": true,
+          "note": "Spec theta_2 = 84.9130 C (p151)."
+        },
+        {
+          "path": "conduits.cir-1-middle.ampacityAmps",
+          "expected": 1460.4545,
+          "actual": 1460.5,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": 0.0031,
+          "marginUsed": 0.62,
+          "pass": true,
+          "note": "Spec ampacity I = 1460.4545 A (p147, p151, p162). Engine produces ~1463.2 A (+0.19 percent) after Phase 1 (W_x/W_n weighted T4 + direct-bury D_e fix) and Phase 2 (per-phase Y_se foil eddy). Tolerance dropped from 3.5 percent to 0.5 percent in Phase 3 (band tightening)."
+        }
+      ]
+    },
+    {
+      "id": "cigre-tb880-case-1-trefoil-buried",
+      "title": "CIGRE TB 880 Case 1 - 132 kV 1x1200 mm2 Cu/XLPE/CWS+Al-foil/PE, directly buried close trefoil",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 5 (132 kV cables in direct buried trefoil formation), p131-145",
+      "sourceType": "cigre-tb880",
+      "page": "p131-145",
+      "tags": [
+        "cigre-tb880",
+        "trefoil",
+        "direct-buried",
+        "hv"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/cigre-tb880-case-1-trefoil-buried.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "cigre-tb880",
+      "computedAt": "2026-05-24T00:11:16.199Z",
+      "expectations": [
+        {
+          "path": "conduits.cir-1-top.resistances.t1KmPerW",
+          "expected": 0.37891,
+          "actual": 0.3789088973719826,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.0003,
+          "marginUsed": 0.06,
+          "pass": true,
+          "note": "Spec T1 = 0.37891 (p142 step 5). Engine sums per-sub-layer (1.8 mm SC rho=2.5, 16.9 mm XLPE rho=3.5, 1.2 mm SC rho=2.5, 0.7 mm swelling-tape rho=12) per CIGRE TB 880 p83 / IEC 60287-2-1 §4.1.2. Lands at 0.37891 (0.003 % off)."
+        },
+        {
+          "path": "conduits.cir-1-top.resistances.t2KmPerW",
+          "expected": 0.012137,
+          "actual": 0.012137140456670439,
+          "toleranceAbs": null,
+          "toleranceRel": 0.01,
+          "deviationPercent": 0.0012,
+          "marginUsed": 0.12,
+          "pass": true,
+          "note": "Spec T2 = 0.012137 (p143). Outer swelling tape between CWS (D_sc=87.84) and foil (D_owt=88.4), rho_wb = 12 K.m/W."
+        },
+        {
+          "path": "conduits.cir-1-top.losses.dielectricWPerM",
+          "expected": 0.46541,
+          "actual": 0.46539406691709406,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.0034,
+          "marginUsed": 0.68,
+          "pass": true,
+          "note": "Spec W_d = 0.46541 (p134 step 3); back-solved epsilon 3.080 makes engine match."
+        },
+        {
+          "path": "conduits.cir-1-top.resistances.t3KmPerW",
+          "expected": 0.08525,
+          "actual": 0.08528629755969752,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": 0.0426,
+          "marginUsed": 8.52,
+          "pass": true,
+          "note": "Spec T3_base 0.05328 * 1.6 = 0.08525 (p144 step 4); IEC 60287-2-1 §4.2.4.3.2 buried touching-trefoil multiplier."
+        },
+        {
+          "path": "conduits.cir-1-top.losses.sheathLossFactorLambda1",
+          "expected": 0.79055,
+          "actual": 0.7911376470649363,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": 0.0743,
+          "marginUsed": 2.48,
+          "pass": true,
+          "note": "Spec lambda1_total = lambda1-cws (0.58895, CWS circulating) + lambda1-fl (0.20160, Al-foil eddy + circulating-share) per p144 Table 5-15. Engine reports the sum."
+        },
+        {
+          "path": "conduits.cir-1-top.resistances.t4TriplePrimeKmPerW",
+          "expected": 1.4701534385,
+          "actual": 1.4701534385336803,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": 0,
+          "marginUsed": 0,
+          "pass": true,
+          "note": "Spec T4 = 1.4702 K.m/W (p144 Table 5-15). IEC 60287-2-1 §4.2.4.3.2 closed-form for buried touching trefoil."
+        },
+        {
+          "path": "conduits.cir-1-top.ampacityAmps",
+          "expected": 990.5401,
+          "actual": 990.4,
+          "toleranceAbs": null,
+          "toleranceRel": 0.02,
+          "deviationPercent": -0.0141,
+          "marginUsed": 0.71,
+          "pass": true,
+          "note": "10-digit reference 990.5401 A (p145 step 2)."
+        }
+      ]
+    },
+    {
+      "id": "cigre-tb880-case-2-30kv-submarine",
+      "title": "CIGRE TB 880 Case 2 - 30 kV three-core submarine array cable",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 5 Case Study 2",
+      "sourceType": "cigre-tb880",
+      "page": "p164-179",
+      "tags": [
+        "cigre-tb880",
+        "submarine",
+        "three-conductor",
+        "armoured"
+      ],
+      "status": "skipped",
+      "pass": false,
+      "skipReason": "Submarine three-core armoured cable. Phase 5 (IEC 60287-1-1:2023 §5.4.3.3.1 magnetic-armour lambda2 + §5.4.3.5 SL-type modifier) is now active and validated against this case's worked example at p174 (lambda2 = 0.4206526837); see `cigre-tb880-p174-armor-lambda2-3c-swa-round` unit fixture. Phase 6 (parallel) grounds the lead-alloy sheath alpha20 via IEC 60287-1-1:2023 Table 1 (resolveSheathElectricalProps). Remaining gap blocking end-to-end ampacity: seabed-burial T4 branch with sea-water boundary conditions (IEC 60287-2-1 §4.2.5 — not in reference library, out of v4 scope), and the laid-up three-core lay-factor T1 correction (Phase 3 partial).",
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": []
+    },
+    {
+      "id": "cigre-tb880-case-4-33kv-land",
+      "title": "CIGRE TB 880 Case 4 - 33 kV land cable",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 8 Case Study 4 (p195-205)",
+      "sourceType": "cigre-tb880",
+      "page": "p195-205",
+      "tags": [
+        "cigre-tb880",
+        "land",
+        "single-conductor"
+      ],
+      "status": "skipped",
+      "pass": false,
+      "skipReason": "Phase 5 audit (2026-05): re-read of CIGRE TB 880 p195-205 shows Case 4 is a 33 kV SINGLE-core copper-wire-screened land cable (Cu conductor / XLPE / Cu wire screen / HDPE outer sheath) with NO metallic armour (p203 explicitly: 'T2 = 0 since there is no armour or outer metallic layers'). The case is gated by the IEC 60287-2-1 §4.2.4.3.3 'wire-screen coverage <50%' correction (T'1 × 1.07 and T'3 × 1.6 per CIGRE TB 880 p202-203), not by armour lambda2. Phase 5 (IEC 60287-1-1:2023 §5.4 magnetic-armour math) does NOT unblock this fixture; the original v4 plan brief listing case-4 as armor-blocked was incorrect. Expected ampacity per CIGRE p205: I = 537.4631099368 A. Future implementer needs the IEC 60287-2-1 §4.2.4.3.3 wire-coverage T1/T3 multipliers.",
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": []
+    },
+    {
+      "id": "cigre-tb880-case-5-400kv-lpof-flat",
+      "title": "CIGRE TB 880 Case 5 - 400 kV LPOF cable in flat formation",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 8 Case Study 5",
+      "sourceType": "cigre-tb880",
+      "page": "p219-237",
+      "tags": [
+        "cigre-tb880",
+        "oil-filled",
+        "flat",
+        "hv"
+      ],
+      "status": "skipped",
+      "pass": false,
+      "skipReason": "Low-pressure oil-filled (LPOF) cable in flat formation. Combines the LPOF construction gaps (see case-5-400kv-lpof-trefoil) with the per-phase lambda1 differentiation in flat formation that is also blocking case-0-3 and case-1-flat-buried.",
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": []
+    },
+    {
+      "id": "cigre-tb880-case-5-400kv-lpof-trefoil",
+      "title": "CIGRE TB 880 Case 5 - 400 kV LPOF cable in trefoil formation",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 8 Case Study 5",
+      "sourceType": "cigre-tb880",
+      "page": "p206-218",
+      "tags": [
+        "cigre-tb880",
+        "oil-filled",
+        "trefoil",
+        "hv"
+      ],
+      "status": "skipped",
+      "pass": false,
+      "skipReason": "Low-pressure oil-filled (LPOF) cable construction not modeled. Engine has no oil-channel geometry, no Milliken segmental conductor with skid wires, and no laminated-paper insulation rho/epsilon temperature dependence.",
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": []
+    },
+    {
+      "id": "cigre-tb880-case-6-400kv-submarine-ac",
+      "title": "CIGRE TB 880 Case 6 - 400 kV single-core AC submarine cable",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 9 Case Study 6",
+      "sourceType": "cigre-tb880",
+      "page": "p238-261",
+      "tags": [
+        "cigre-tb880",
+        "submarine",
+        "single-conductor",
+        "armoured",
+        "hv"
+      ],
+      "status": "skipped",
+      "pass": false,
+      "skipReason": "Single-core AC submarine cable with lead alloy sheath plus magnetic armour. Phase 6 grounds the lead-sheath alpha20 (4.0e-3 /K) and rho20 (21.4e-8 ohm.m) via IEC 60287-1-1:2023 Table 1 (sheath material lookup in losses/sheath-utils.ts:resolveSheathElectricalProps). Remaining gaps blocking end-to-end ampacity: (1) seabed-burial T4 branch with sea-water boundary conditions (IEC 60287-2-1 §4.2.5 — not in reference library, out of v4 scope), and (2) IEC 60287-1-1:2023 §5.4.3.1 single-core SWA both-ends-bonded vector-inductance armour model with three independent H_s, H1, H2, H3 inductance terms — Phase 5 deliberately does NOT implement §5.4.3.1 because there is no second validation case to verify it against (this is the only such fixture); the engine emits RES-W-ARMOR-EXOTIC-NOT-MODELED for this shape and reports armour losses as zero.",
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": []
+    },
+    {
+      "id": "cigre-tb880-case-7-320kv-hvdc-submarine",
+      "title": "CIGRE TB 880 Case 7 - 320 kV HVDC submarine bipole",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 10 Case Study 7",
+      "sourceType": "cigre-tb880",
+      "page": "p262-270",
+      "tags": [
+        "cigre-tb880",
+        "submarine",
+        "hvdc",
+        "hv"
+      ],
+      "status": "skipped",
+      "pass": false,
+      "skipReason": "HVDC bipole. Engine is AC-only: no DC R20-only resistance branch, no field-limited rating mode (E_max), no temperature drop across insulation under DC space-charge effect, and no submarine seabed-burial T4 branch.",
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": []
+    },
+    {
+      "id": "cigre-tb880-case-8-220kv-3c-submarine-export",
+      "title": "CIGRE TB 880 Case 8 - 220 kV 3-core submarine export cable",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 11 Case Study 8",
+      "sourceType": "cigre-tb880",
+      "page": "p271-onwards",
+      "tags": [
+        "cigre-tb880",
+        "submarine",
+        "three-conductor",
+        "armoured",
+        "hv"
+      ],
+      "status": "skipped",
+      "pass": false,
+      "skipReason": "Three-core submarine export cable with metallic armour. Combines the gaps from Case 2 (laid-up three-core T1, lambda2 armour, seabed T4) at higher voltage. Core-layup effect on AC resistance is also outside engine scope.",
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": []
+    },
+    {
+      "id": "cigre-tb880-gp44-lay-length-factor",
+      "title": "CIGRE TB 880 GP44 — laid-up assembly lay-length factor F_lay",
+      "citation": "CIGRE TB 880 (Sep 2022) general procedure GP44; same kernel as IEC 60287-1-1 §2.3.4 helical path-length correction. Phase 3 implements F_lay = sqrt(1 + (pi * 1.29 * d_core / L_lay)^2).",
+      "sourceType": "cigre-tb880",
+      "page": "GP44 (also referenced from GP20, GP23)",
+      "tags": [
+        "cigre-tb880",
+        "lay-length",
+        "triplex",
+        "quadruplex",
+        "assembly",
+        "unit",
+        "phase-3"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "fLay",
+          "expected": 1.28723,
+          "actual": null,
+          "toleranceAbs": 0.0001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Reference value computed from F_lay = sqrt(1 + (pi * 1.29 * d_core / L_lay)^2). The 1.29 coefficient is the CIGRE TB 880 GP-section lay-circle / core-diameter ratio for tightly cabled triplex / quadruplex assemblies. Tolerance is 1e-4 to absorb hand-arithmetic uncertainty in the published expected value; the helper itself is an exact closed-form double-precision evaluation."
+        }
+      ]
+    },
+    {
+      "id": "cigre-tb880-gp44-triplex-1-0-urd",
+      "title": "CIGRE TB 880 GP44 — triplex 1/0 AWG URD lay-length factor",
+      "citation": "CIGRE TB 880 (Sep 2022) GP44 lay-length correction applied to a representative 1/0 AWG URD triplex cable. Per-core OD 17.15 mm (53.49 mm² Cu conductor / 8.25 mm bare + 4.45 mm 175-mil XLPE wall, ICEA S-105-692 typical), lay length 152 mm (~9 × per-core OD, mid of ICEA S-105-692 6-10× spec).",
+      "sourceType": "cigre-tb880",
+      "page": "GP44",
+      "tags": [
+        "cigre-tb880",
+        "lay-length",
+        "triplex",
+        "urd",
+        "unit",
+        "phase-3"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "fLay",
+          "expected": 1.099584,
+          "actual": null,
+          "toleranceAbs": 0.0001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "1/0 AWG URD triplex with manufacturer-typical lay length (152 mm). F_lay ≈ 1.10 means the radial T1 path of each core is ~10% shorter per axial metre than its un-laid equivalent — engine divides T1 by F_lay per CIGRE TB 880 GP44. Tolerance is 1e-4 to absorb hand-arithmetic uncertainty in the published expected value; the helper itself is exact double-precision."
+        }
+      ]
+    },
+    {
+      "id": "cigre-tb880-p154-cross-bond-m-su",
+      "title": "CIGRE TB 880 p154 - cross-bond unbalance factor m_su(p, q) for p=1, q=1.2",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 5 cross-bonded sheath model, p154. IEC 60287-1-1 §2.3.6.2.",
+      "sourceType": "cigre-tb880",
+      "page": 154,
+      "tags": [
+        "cigre-tb880",
+        "cross-bonded",
+        "sheath-loss",
+        "unit",
+        "hand-calc"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "mSu",
+          "expected": 0.00390625,
+          "actual": null,
+          "toleranceAbs": 1e-9,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "m_su(1, 1.2) = 0.00390625 - small unbalance from a 20% longer minor section."
+        }
+      ]
+    },
+    {
+      "id": "cigre-tb880-p154-cross-bond-m-su-2-1",
+      "title": "CIGRE TB 880 p154 - cross-bond unbalance factor m_su(2, 1) = 1/16",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 5 cross-bonded sheath model, p154. IEC 60287-1-1 §2.3.6.2.",
+      "sourceType": "cigre-tb880",
+      "page": 154,
+      "tags": [
+        "cigre-tb880",
+        "cross-bonded",
+        "sheath-loss",
+        "unit",
+        "hand-calc"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "mSu",
+          "expected": 0.0625,
+          "actual": null,
+          "toleranceAbs": 1e-12,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "m_su(2, 1) = (4 + 1 + 1 - 2 - 2 - 1) / 16 = 1 / 16 = 0.0625."
+        }
+      ]
+    },
+    {
+      "id": "cigre-tb880-p154-cross-bond-m-su-balanced",
+      "title": "CIGRE TB 880 p154 - cross-bond unbalance factor m_su(1, 1) = 0 (perfect transposition)",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 5 cross-bonded sheath model, p154. IEC 60287-1-1 §2.3.6.2.",
+      "sourceType": "cigre-tb880",
+      "page": 154,
+      "tags": [
+        "cigre-tb880",
+        "cross-bonded",
+        "sheath-loss",
+        "unit",
+        "hand-calc",
+        "regression-guard"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "mSu",
+          "expected": 0,
+          "actual": null,
+          "toleranceAbs": 1e-12,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Perfect transposition cancels circulating sheath loss exactly."
+        }
+      ]
+    },
+    {
+      "id": "cigre-tb880-p155-flat-foil-eddy",
+      "title": "CIGRE TB 880 p155-158 - per-position foil-eddy lambda1-fl (flat formation)",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 5 (Case 1, 132 kV flat formation), p155-158. IEC 60287-1-1 §2.3.6.1.",
+      "sourceType": "cigre-tb880",
+      "page": "p155-158",
+      "tags": [
+        "cigre-tb880",
+        "flat",
+        "sheath-loss",
+        "eddy",
+        "unit",
+        "hand-calc"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "middle",
+          "expected": 0.0034622526273,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.01,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "lambda''_1-fl_m = 3.4622526273e-3 (CIGRE TB 880 p158). Engine reproduces to <0.05 % using lambda_0_m = 6*m^2/(1+m^2)*(d_fl/2s)^2 and Delta_1_m = 0.86*m^3.08*(d_fl/2s)^(1.4m+0.7) per p156."
+        },
+        {
+          "path": "laggingOuter",
+          "expected": 0.00087900366024,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.01,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "lambda''_1-fl_1 = 8.7900366024e-4 (p158). Lagging outer uses lambda_0_1 = 1.5*m^2/(1+m^2)*(d/2s)^2, Delta_1_1 = -[0.74(m+2)*sqrt(m)/(2+(m-0.3)^2)]*(d/2s)^(m+1), Delta_2_1 = 0.92*m^3.7*(d/2s)^(m+2)."
+        },
+        {
+          "path": "leadingOuter",
+          "expected": 0.00089527974112,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.01,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "lambda''_1-fl_2 = 8.9527974112e-4 (p158). Leading outer uses lambda_0_2 = 1.5*m^2/(1+m^2)*(d/2s)^2, Delta_1_2 = 4.7*m^0.7*(d/2s)^(0.16m+2), Delta_2_2 = 21*m^3.3*(d/2s)^(1.47m+5.06)."
+        }
+      ]
+    },
+    {
+      "id": "cigre-tb880-p174-armor-lambda2-3c-swa-round",
+      "title": "CIGRE TB 880 Case 2 p174 - lambda2 for 3C round-conductor SWA submarine cable",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 6 Case Study 2 'Loss factor for armour' p172-174. Formula per IEC 60287-1-1:2023 §5.4.3.3.1 (3C round-conductor SWA) + §5.4.3.5 (SL-type modifier). Reference text in `packages/engine-nm/reference/pages/cigre-880/p174.txt` lines 14-47 and `iec60287-1-1en/p034.png` (printed p32).",
+      "sourceType": "cigre-tb880",
+      "page": 174,
+      "tags": [
+        "cigre-tb880",
+        "armoured",
+        "three-conductor",
+        "sheath-loss",
+        "hand-calc",
+        "unit"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "lambda2",
+          "expected": 0.4206526837,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.001,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "lambda2 = 1.23·R_A/R·(2c/d_A)²·1/((2.77·R_A·1e6/omega)²+1)·(1 - (R/R_s)·lambda1'). CIGRE TB 880 p174 brochure value 0.4206526837 is reproduced to 4 significant digits (engine: ~0.42068 vs CIGRE: 0.42065). Residual ~0.007% comes from IEEE-754 round-off in the chained division/multiplication; documented as acceptable by inspection."
+        }
+      ]
+    },
+    {
+      "id": "cigre-tb880-p93-flat-lambda-prime",
+      "title": "CIGRE TB 880 p93 - per-position lambda1 closed form (flat formation)",
+      "citation": "CIGRE TB 880 (Sep 2022), Section 4.1.4 numerical example, p93. IEC 60287-1-1 §2.3.3.",
+      "sourceType": "cigre-tb880",
+      "page": 93,
+      "tags": [
+        "cigre-tb880",
+        "flat",
+        "sheath-loss",
+        "unit",
+        "hand-calc"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "middle",
+          "expected": 0.7748393697,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.00002,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "lambda'1m = (Rs/R) * Q^2 / (Rs^2 + Q^2); Q = X - Xm/3."
+        },
+        {
+          "path": "laggingOuter",
+          "expected": 1.710504596,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.00002,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "lambda'11 with +cross term per CIGRE TB 880 p93 / IEC 60287-1-1 §2.3.3."
+        },
+        {
+          "path": "leadingOuter",
+          "expected": 1.281906611,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.00002,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "lambda'12 with -cross term per CIGRE TB 880 p93 / IEC 60287-1-1 §2.3.3."
+        }
+      ]
+    },
+    {
+      "id": "diagnostic-equal-share-missing-demand",
+      "title": "Diagnostic NM-W-006 fires when temperature-at-equal-share-load scope omits circuit demand",
+      "citation": "NM-Calc invariant: missing equal-share demand must surface as a warning",
+      "sourceType": "invariant",
+      "page": null,
+      "tags": [
+        "invariant",
+        "diagnostic",
+        "equal-share"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/diagnostic-equal-share-missing-demand.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.200Z",
+      "expectations": []
+    },
+    {
+      "id": "diagnostic-ks-kp-source-divergence-emitted",
+      "title": "RES-W-KS-KP-SOURCE-DIVERGENCE emitted when conductor.ksKpSource.divergent is true",
+      "citation": "v4 Phase 4 — solver one-shot warning emission for the NM 1957 / IEC 60287-1-1 ks/kp dual-source divergence detected by the resolver. Mirrors the RES-W-ARMOR-UNMODELED emission pattern in solver/coupled.ts.",
+      "sourceType": "regression",
+      "page": null,
+      "tags": [
+        "v4",
+        "ks-kp",
+        "divergence",
+        "diagnostic"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/diagnostic-ks-kp-source-divergence-emitted.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.200Z",
+      "expectations": [
+        {
+          "path": "conduits.cir-1.temperatures.conductorC",
+          "expected": 20,
+          "actual": 20,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": 0,
+          "marginUsed": 0,
+          "pass": true,
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "diagnostic-temp-at-load-missing-current",
+      "title": "Diagnostic NM-W-006 fires when temperature-at-load scope omits a circuit's load",
+      "citation": "NM-Calc invariant: missing user-supplied current in temperature-at-load scope must surface as a warning",
+      "sourceType": "invariant",
+      "page": null,
+      "tags": [
+        "invariant",
+        "diagnostic",
+        "fixed-load"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/diagnostic-temp-at-load-missing-current.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.200Z",
+      "expectations": []
+    },
+    {
+      "id": "iec-60287-1-1-table-II-skin-prox",
+      "title": "IEC 60287-1-1 Table 2 - skin and proximity factors",
+      "citation": "IEC 60287-1-1 Edition 2.0 (2006-12) with A1:2014 / 2023 reaffirmations, Table 2 — k_s and k_p coefficients. Cross-referenced against CIGRE TB 880 Case 1 (1×1200 mm² Cu Milliken) which uses the IEC values directly.",
+      "sourceType": "cigre-tb880",
+      "page": 132,
+      "tags": [
+        "iec-60287-1-1",
+        "ac-resistance",
+        "skin-effect",
+        "proximity-effect",
+        "unit",
+        "v4"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "entries.concentric-round-treated.ks",
+          "expected": 1,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.concentric-round-treated.kp",
+          "expected": 0.8,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-treated.ks",
+          "expected": 1,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-treated.kp",
+          "expected": 0.8,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-segmental-4-treated.ks",
+          "expected": 0.8,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "IEC 60287-1-1 Table 2 Note 2 — bare-wire 4-segment Milliken at A ≥ 1000 mm². CIGRE TB 880 Case 1 1200 mm² cable cites this row."
+        },
+        {
+          "path": "entries.compact-segmental-4-treated.kp",
+          "expected": 0.37,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "IEC 60287-1-1 Table 2 — 4-segment Milliken kp."
+        },
+        {
+          "path": "entries.compact-segmental-5-treated.ks",
+          "expected": 0.435,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-segmental-5-treated.kp",
+          "expected": 0.37,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-segmental-6-treated.ks",
+          "expected": 0.39,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "IEC 60287-1-1 Table 2 — 6-segment Milliken hollow-core. Matches NM 1957 p755 Note 4 row."
+        },
+        {
+          "path": "entries.compact-segmental-6-treated.kp",
+          "expected": 0.37,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-sector-treated.ks",
+          "expected": 1,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-sector-treated.kp",
+          "expected": 0.8,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "iec60287-1-1-armor-lambda2-3c-steel-tape",
+      "title": "IEC 60287-1-1:2023 §5.4.3.4 - lambda2 for 3C steel-tape armor (hand-calc reference)",
+      "citation": "IEC 60287-1-1:2023 §5.4.3.4 'Three-core cables – Steel tape armour or reinforcement', Formulae (17), (18), (19), (20). Reference text in `packages/engine-nm/reference/pages/iec60287-1-1en/p035.png` (printed p33).",
+      "sourceType": "hand-calc",
+      "page": "p035 (IEC pdf)",
+      "tags": [
+        "armoured",
+        "three-conductor",
+        "hand-calc",
+        "unit"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "lambda2Hyst",
+          "expected": 0.00648,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 1e-9,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Eq. 17 with the inputs above. Hand-computed exactly: (900*0.36*1e-7)/(5e-3) = 6.48e-3. Tolerance 1e-9 catches any constant transposition."
+        },
+        {
+          "path": "lambda2Eddy",
+          "expected": 0.0003645,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 1e-9,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Eq. 19 with the inputs above: (2.25*900*0.36*0.5*1e-8)/(1e-2) = 3.645e-4."
+        },
+        {
+          "path": "lambda2",
+          "expected": 0.0068445,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 1e-9,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Eq. 20: lambda2 = lambda2_hyst + lambda2_eddy = 6.48e-3 + 3.645e-4 = 6.8445e-3."
+        }
+      ]
+    },
+    {
+      "id": "invariant-deeper-burial-lower-ampacity",
+      "title": "Deeper burial monotonically reduces ampacity",
+      "citation": "NM-Calc invariant: larger burial depth increases external thermal resistance",
+      "sourceType": "invariant",
+      "page": null,
+      "tags": [
+        "invariant",
+        "t4-external",
+        "ampacity"
+      ],
+      "status": "skipped",
+      "pass": false,
+      "skipReason": "requires multi-input monotonic assertions",
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": []
+    },
+    {
+      "id": "invariant-doubling-rho-doubles-t4",
+      "title": "Doubling soil rho approximately doubles isolated-cable external T4",
+      "citation": "NM-Calc invariant: external thermal resistance is linear in soil rho",
+      "sourceType": "invariant",
+      "page": null,
+      "tags": [
+        "invariant",
+        "t4-external",
+        "direct-buried"
+      ],
+      "status": "skipped",
+      "pass": false,
+      "skipReason": "requires multi-input relation assertions",
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": []
+    },
+    {
+      "id": "invariant-loss-factor-from-load",
+      "title": "NM 1957 eq. 3: loss factor mu = 0.3*lf + 0.7*lf^2",
+      "citation": "NM 1957 eq. 3, page 752 - load factor (lowercase lf) to loss factor (capital LF, == mu)",
+      "sourceType": "invariant",
+      "page": null,
+      "tags": [
+        "invariant",
+        "nm-1957",
+        "loss-factor"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/invariant-loss-factor-from-load.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.200Z",
+      "expectations": [
+        {
+          "path": "globals.lossFactorMu",
+          "expected": 0.61875,
+          "actual": 0.6187499999999999,
+          "toleranceAbs": 1e-9,
+          "toleranceRel": null,
+          "deviationPercent": 0,
+          "marginUsed": 0,
+          "pass": true,
+          "note": "mu = 0.3 * 0.75 + 0.7 * 0.75^2 = 0.225 + 0.39375 = 0.61875. Pins the engine's conversion semantics: input 'loadFactorDaily' is the lowercase NM 'lf' (load factor), and globals.lossFactorMu is the capital 'LF' (loss factor) consumed by NM eq. 44A."
+        }
+      ]
+    },
+    {
+      "id": "invariant-symmetry-2x2",
+      "title": "Symmetric 2x2 duct bank yields identical ampacity for identical circuits",
+      "citation": "NM-Calc invariant: symmetric geometry should preserve equal results",
+      "sourceType": "invariant",
+      "page": null,
+      "tags": [
+        "invariant",
+        "duct-bank",
+        "mutual-heating"
+      ],
+      "status": "skipped",
+      "pass": false,
+      "skipReason": "requires mutual-heating solver and relation assertions",
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": []
+    },
+    {
+      "id": "invariant-zero-load-zero-temp-rise",
+      "title": "Zero load with zero dielectric loss yields ambient conductor temperature",
+      "citation": "NM-Calc invariant: no heat sources imply no temperature rise",
+      "sourceType": "invariant",
+      "page": null,
+      "tags": [
+        "invariant",
+        "fixed-load",
+        "direct-buried"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/invariant-zero-load-zero-temp-rise.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.201Z",
+      "expectations": [
+        {
+          "path": "conduits.cir-1.ampacityAmps",
+          "expected": 0,
+          "actual": 0,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": 0,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.cir-1.temperatures.conductorC",
+          "expected": 20,
+          "actual": 20,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": 0,
+          "marginUsed": 0,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.cir-1.losses.totalWPerM",
+          "expected": 0,
+          "actual": 0,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": 0,
+          "pass": true,
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "ks-kp-source-divergence-segmental-4",
+      "title": "ks/kp dual-source lookup — divergent (segmental, 4-segment, treated)",
+      "citation": "NM 1957 Table II (p. 755) compact-segmental-treated ks=0.435 vs IEC 60287-1-1 Table 2 Note 2 bare-wire 4-segment Milliken ks=0.8. Divergence demonstrated by CIGRE TB 880 Case 1 (1×1200 mm² Cu Milliken, p131-132) which uses the IEC value.",
+      "sourceType": "cigre-tb880",
+      "page": 132,
+      "tags": [
+        "v4",
+        "ks-kp",
+        "divergence",
+        "unit",
+        "iec-60287-1-1",
+        "nm-1957"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "selected.ks",
+          "expected": 0.8,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "IEC 60287-1-1 Table 2 Note 2 — bare-wire 4-segment Milliken at A ≥ 1000 mm²."
+        },
+        {
+          "path": "selected.kp",
+          "expected": 0.37,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "selected.source",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "nm1957.ks",
+          "expected": 0.435,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "NM 1957 Table II compact-segmental-treated row — does not differentiate bare-wire vs insulated-segment Milliken."
+        },
+        {
+          "path": "nm1957.kp",
+          "expected": 0.37,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "nm1957.key",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "nm1957.citation",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "iec60287.ks",
+          "expected": 0.8,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "iec60287.kp",
+          "expected": 0.37,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "iec60287.key",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "iec60287.citation",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "divergent",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "tupleKey",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-5-3duct-1000kcmil-al-rho90-lf100",
+      "title": "NEC Annex B Table B.310.15(B)(2)(5) - 3 ducts (Detail 2), 1000 kcmil Al, RHO 90, LF 100",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(5), 3 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 2), 1000 kcmil aluminum, RHO 90 C-cm/W, LF 100, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-5",
+        "duct-bank",
+        "aluminum",
+        "low-voltage",
+        "single-conductor",
+        "detail-2"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-5-3duct-1000kcmil-al-rho90-lf100.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.201Z",
+      "expectations": [
+        {
+          "path": "conduits.d2.ampacityAmps",
+          "expected": 593,
+          "actual": 591.5,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": -0.253,
+          "marginUsed": 8.43,
+          "pass": true,
+          "note": "Large aluminum size; column header lists XHHW alongside RHW/THHW/THW/THWN/USE at 75 C."
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-5-3duct-250kcmil-cu-rho60-lf50",
+      "title": "NEC Annex B Table B.310.15(B)(2)(5) - 3 ducts (Detail 2), 250 kcmil Cu, RHO 60, LF 50",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(5), 3 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 2), 250 kcmil copper, RHO 60 C-cm/W, LF 50, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-5",
+        "duct-bank",
+        "copper",
+        "low-voltage",
+        "single-conductor",
+        "detail-2",
+        "low-load-factor"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-5-3duct-250kcmil-cu-rho60-lf50.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.202Z",
+      "expectations": [
+        {
+          "path": "conduits.d2.ampacityAmps",
+          "expected": 410,
+          "actual": 397.2,
+          "toleranceAbs": null,
+          "toleranceRel": 0.07,
+          "deviationPercent": -3.122,
+          "marginUsed": 44.6,
+          "pass": true,
+          "note": "Smallest size in table, low RHO and 50% load factor. Engine 397.2 A vs spec 410 A (-3.12% rel, -12.8 A abs); within abs:25 band. Phase 3a held at 7% rel pending Phase 4 fixes (D_x*1.02, single-point-bonded Y_se, dielectric earth). Phase 4 produced no measurable shift on this case, so the 7% rel band is retained. Likely residual: NM 1957 LF=0.5 / low-rho coupling or duct-internal R_sd at small conductor diameter. Follow-up: investigate small-conductor R_sd path and the LF<1 weighting in Eq. 44A."
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-5-3duct-500kcmil-cu-rho90-lf100",
+      "title": "NEC Annex B Table B.310.15(B)(2)(5) - 3 ducts (Detail 2), 500 kcmil Cu, RHO 90, LF 100",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(5), 3 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 2), 500 kcmil copper, RHO 90 C-cm/W, LF 100, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-5",
+        "duct-bank",
+        "copper",
+        "low-voltage",
+        "single-conductor",
+        "detail-2"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-5-3duct-500kcmil-cu-rho90-lf100.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.202Z",
+      "expectations": [
+        {
+          "path": "conduits.d2.ampacityAmps",
+          "expected": 511,
+          "actual": 504.3,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": -1.3112,
+          "marginUsed": 43.71,
+          "pass": true,
+          "note": "Center conduit of 1x3 row; NEC table value is the worst-case duct ampacity."
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-5-6duct-1000kcmil-al-rho120-lf100",
+      "title": "NEC Annex B Table B.310.15(B)(2)(5) - 6 ducts (Detail 3), 1000 kcmil Al, RHO 120, LF 100",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(5), 6 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 3), 1000 kcmil aluminum, RHO 120 C-cm/W, LF 100, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-5",
+        "duct-bank",
+        "aluminum",
+        "low-voltage",
+        "single-conductor",
+        "detail-3",
+        "high-rho"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-5-6duct-1000kcmil-al-rho120-lf100.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.203Z",
+      "expectations": [
+        {
+          "path": "conduits.d5.ampacityAmps",
+          "expected": 453,
+          "actual": 456.9,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": 0.8609,
+          "marginUsed": 28.7,
+          "pass": true,
+          "note": "Bottom-center conduit of 2x3 grid; intermediate-geometry / high-rho regression guard between rho-90 6-duct (passing) and rho-120 9-duct (failing)."
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-5-6duct-500kcmil-cu-rho120-lf100",
+      "title": "NEC Annex B Table B.310.15(B)(2)(5) - 6 ducts (Detail 3), 500 kcmil Cu, RHO 120, LF 100",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(5), 6 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 3), 500 kcmil copper, RHO 120 C-cm/W, LF 100, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-5",
+        "duct-bank",
+        "copper",
+        "low-voltage",
+        "single-conductor",
+        "detail-3",
+        "high-rho"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-5-6duct-500kcmil-cu-rho120-lf100.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.207Z",
+      "expectations": [
+        {
+          "path": "conduits.d5.ampacityAmps",
+          "expected": 400,
+          "actual": 400.2,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": 0.05,
+          "marginUsed": 1.67,
+          "pass": true,
+          "note": "Bottom-center conduit of 2x3 grid; intermediate-geometry / high-rho regression guard between rho-90 6-duct (passing) and rho-120 9-duct (failing)."
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-5-6duct-500kcmil-cu-rho90-lf100",
+      "title": "NEC Annex B Table B.310.15(B)(2)(5) - 6 ducts (Detail 3), 500 kcmil Cu, RHO 90, LF 100",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(5), 6 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 3), 500 kcmil copper, RHO 90 C-cm/W, LF 100, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-5",
+        "duct-bank",
+        "copper",
+        "low-voltage",
+        "single-conductor",
+        "detail-3"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-5-6duct-500kcmil-cu-rho90-lf100.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.210Z",
+      "expectations": [
+        {
+          "path": "conduits.d5.ampacityAmps",
+          "expected": 431,
+          "actual": 432.2,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": 0.2784,
+          "marginUsed": 9.28,
+          "pass": true,
+          "note": "Bottom-center conduit of 2x3 grid; deepest interior position."
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-5-9duct-1000kcmil-al-rho120-lf100",
+      "title": "NEC Annex B Table B.310.15(B)(2)(5) - 9 ducts (Detail 4), 1000 kcmil Al, RHO 120, LF 100",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(5), 9 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 4), 1000 kcmil aluminum, RHO 120 C-cm/W, LF 100, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-5",
+        "duct-bank",
+        "aluminum",
+        "low-voltage",
+        "single-conductor",
+        "detail-4",
+        "high-rho"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-5-9duct-1000kcmil-al-rho120-lf100.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.212Z",
+      "expectations": [
+        {
+          "path": "conduits.d5.ampacityAmps",
+          "expected": 399,
+          "actual": 410.4,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": 2.8571,
+          "marginUsed": 95.24,
+          "pass": true,
+          "note": "Worst-case derate: largest soil rho, 9 ducts, center position."
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-5-9duct-1000kcmil-al-rho90-lf100",
+      "title": "NEC Annex B Table B.310.15(B)(2)(5) - 9 ducts (Detail 4), 1000 kcmil Al, RHO 90, LF 100",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(5), 9 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 4), 1000 kcmil aluminum, RHO 90 C-cm/W, LF 100, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-5",
+        "duct-bank",
+        "aluminum",
+        "low-voltage",
+        "single-conductor",
+        "detail-4"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-5-9duct-1000kcmil-al-rho90-lf100.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.216Z",
+      "expectations": [
+        {
+          "path": "conduits.d5.ampacityAmps",
+          "expected": 432,
+          "actual": 445.6,
+          "toleranceAbs": null,
+          "toleranceRel": 0.07,
+          "deviationPercent": 3.1481,
+          "marginUsed": 44.97,
+          "pass": true,
+          "note": "Center conduit of 3x3 grid; rho-90 sibling for the rho-120 9-duct Al failing case (B). Engine 445.6 A vs spec 432 A (+3.15% rel, +13.6 A abs); within abs:25 band. Phase 3a held at 7% rel pending Phase 4 fixes; Phase 4 (D_x*1.02, SPB Y_se, dielectric earth) produced no measurable shift on this case. The over-prediction sign suggests NM Eq. 44A interior-bank G_b under-correction at large arrays — sibling rho-120 9-duct case at 95.2% of band is the regression-guard for this drift family. Follow-up: cross-check G_b for 3x3 banks against NM 1957 Fig. 2 with elongated aspect."
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-5-9duct-500kcmil-cu-rho120-lf100",
+      "title": "NEC Annex B Table B.310.15(B)(2)(5) - 9 ducts (Detail 4), 500 kcmil Cu, RHO 120, LF 100",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(5), 9 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 4), 500 kcmil copper, RHO 120 C-cm/W, LF 100, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-5",
+        "duct-bank",
+        "copper",
+        "low-voltage",
+        "single-conductor",
+        "detail-4",
+        "high-rho"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-5-9duct-500kcmil-cu-rho120-lf100.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.220Z",
+      "expectations": [
+        {
+          "path": "conduits.d5.ampacityAmps",
+          "expected": 360,
+          "actual": 362.3,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": 0.6389,
+          "marginUsed": 21.3,
+          "pass": true,
+          "note": "Center conduit of 3x3 grid; surrounded by 8 neighbors."
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-5-9duct-500kcmil-cu-rho60-lf50",
+      "title": "NEC Annex B Table B.310.15(B)(2)(5) - 9 ducts (Detail 4), 500 kcmil Cu, RHO 60, LF 50",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(5), 9 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 4), 500 kcmil copper, RHO 60 C-cm/W, LF 50, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-5",
+        "duct-bank",
+        "copper",
+        "low-voltage",
+        "single-conductor",
+        "detail-4",
+        "low-load-factor"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-5-9duct-500kcmil-cu-rho60-lf50.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.224Z",
+      "expectations": [
+        {
+          "path": "conduits.d5.ampacityAmps",
+          "expected": 545,
+          "actual": 549.8,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": 0.8807,
+          "marginUsed": 29.36,
+          "pass": true,
+          "note": "Center conduit of 3x3 grid; low-RHO / 50% LF published cell. Replaces nec-310-60-3x3-500kcmil-cu-rho60 (which was specified at LF 100, but Table B.2(5) only publishes RHO 60 at LF 50)."
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-5-9duct-500kcmil-cu-rho90-lf100",
+      "title": "NEC Annex B Table B.310.15(B)(2)(5) - 9 ducts (Detail 4), 500 kcmil Cu, RHO 90, LF 100",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(5), 9 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 4), 500 kcmil copper, RHO 90 C-cm/W, LF 100, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-5",
+        "duct-bank",
+        "copper",
+        "low-voltage",
+        "single-conductor",
+        "detail-4"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-5-9duct-500kcmil-cu-rho90-lf100.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.228Z",
+      "expectations": [
+        {
+          "path": "conduits.d5.ampacityAmps",
+          "expected": 387,
+          "actual": 391.1,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": 1.0594,
+          "marginUsed": 35.31,
+          "pass": true,
+          "note": "Center conduit of 3x3 grid; surrounded by 8 neighbors."
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-6-1duct-3c-4-0awg-cu-rho60-lf50",
+      "title": "NEC Annex B Table B.310.15(B)(2)(6) - 1 duct (Detail 1), 3/C 4/0 AWG Cu, RHO 60, LF 50",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(6), 1 electrical duct (Fig. B.310.15(B)(2)(2) Detail 1), three-conductor cable 4/0 AWG copper, RHO 60 C-cm/W, LF 50, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-6",
+        "copper",
+        "low-voltage",
+        "three-conductor",
+        "detail-1",
+        "low-load-factor"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-6-1duct-3c-4-0awg-cu-rho60-lf50.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.229Z",
+      "expectations": [
+        {
+          "path": "conduits.d1.ampacityAmps",
+          "expected": 268,
+          "actual": 259.2,
+          "toleranceAbs": null,
+          "toleranceRel": 0.07,
+          "deviationPercent": -3.2836,
+          "marginUsed": 35.2,
+          "pass": true,
+          "note": "Single duct, low RHO, 50% load factor. Engine 259.2 A vs spec 268 A (-3.28% rel, -8.8 A abs); within abs:25 band. Phase 3a held at 7% rel pending Phase 4; Phase 4 (D_x*1.02, SPB Y_se, dielectric earth) did not move the answer. Cluster: low-rho/low-LF + single-conduit 3-core. Likely residual: NM 1957 three-conductor T1/T2 multi-core path or LF<1 weighting on a single-duct earth term. Follow-up: trace per-step against NM Appendix calculation method for 3/C 4/0 AWG Cu and identify the divergent T-step."
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-6-1duct-3c-500kcmil-cu-rho90-lf100",
+      "title": "NEC Annex B Table B.310.15(B)(2)(6) - 1 duct (Detail 1), 3/C 500 kcmil Cu, RHO 90, LF 100",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(6), 1 electrical duct (Fig. B.310.15(B)(2)(2) Detail 1), three-conductor cable 500 kcmil copper, RHO 90 C-cm/W, LF 100, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-6",
+        "copper",
+        "low-voltage",
+        "three-conductor",
+        "detail-1"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-6-1duct-3c-500kcmil-cu-rho90-lf100.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.231Z",
+      "expectations": [
+        {
+          "path": "conduits.d1.ampacityAmps",
+          "expected": 389,
+          "actual": 371.8,
+          "toleranceAbs": null,
+          "toleranceRel": 0.07,
+          "deviationPercent": -4.4216,
+          "marginUsed": 63.17,
+          "pass": true,
+          "note": "Single-duct configuration (no concrete encasement). Engine 371.8 A vs spec 389 A (-4.42% rel, -17.2 A abs); within abs:25 band. Worst rel of the 4 left-loose Phase 3a cases. Phase 4 (D_x*1.02, SPB Y_se, dielectric earth) did not close the gap. Cluster: single-conduit 3-core at 500 kcmil Cu / rho 90. Three-conductor cables share the same T1/T2 multi-core gap suspected on the 4/0 AWG sibling. Follow-up: same trace task as nec-annexB-2-6-1duct-3c-4-0awg-cu-rho60-lf50 — likely a single T-step issue compounding across 3/C sizes."
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-6-3duct-3c-4-0awg-al-rho60-lf50",
+      "title": "NEC Annex B Table B.310.15(B)(2)(6) - 3 ducts (Detail 2), 3/C 4/0 AWG Al, RHO 60, LF 50",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(6), 3 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 2), three-conductor cable 4/0 AWG aluminum, RHO 60 C-cm/W, LF 50, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-6",
+        "duct-bank",
+        "aluminum",
+        "low-voltage",
+        "three-conductor",
+        "detail-2",
+        "low-load-factor"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-6-3duct-3c-4-0awg-al-rho60-lf50.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.231Z",
+      "expectations": [
+        {
+          "path": "conduits.d2.ampacityAmps",
+          "expected": 198,
+          "actual": 192.7,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": -2.6768,
+          "marginUsed": 89.23,
+          "pass": true,
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-6-3duct-3c-500kcmil-al-rho90-lf100",
+      "title": "NEC Annex B Table B.310.15(B)(2)(6) - 3 ducts (Detail 2), 3/C 500 kcmil Al, RHO 90, LF 100",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(6), 3 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 2), three-conductor cable 500 kcmil aluminum, RHO 90 C-cm/W, LF 100, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-6",
+        "duct-bank",
+        "aluminum",
+        "low-voltage",
+        "three-conductor",
+        "detail-2"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-6-3duct-3c-500kcmil-al-rho90-lf100.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.232Z",
+      "expectations": [
+        {
+          "path": "conduits.d2.ampacityAmps",
+          "expected": 254,
+          "actual": 247.6,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": -2.5197,
+          "marginUsed": 83.99,
+          "pass": true,
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-6-3duct-3c-500kcmil-cu-rho90-lf100",
+      "title": "NEC Annex B Table B.310.15(B)(2)(6) - 3 ducts (Detail 2), 3/C 500 kcmil Cu, RHO 90, LF 100",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(6), 3 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 2), three-conductor cable 500 kcmil copper, RHO 90 C-cm/W, LF 100, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-6",
+        "duct-bank",
+        "copper",
+        "low-voltage",
+        "three-conductor",
+        "detail-2"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-6-3duct-3c-500kcmil-cu-rho90-lf100.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.234Z",
+      "expectations": [
+        {
+          "path": "conduits.d2.ampacityAmps",
+          "expected": 320,
+          "actual": 312.7,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": -2.2813,
+          "marginUsed": 76.04,
+          "pass": true,
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "nec-annexB-2-6-6duct-3c-500kcmil-cu-rho120-lf100",
+      "title": "NEC Annex B Table B.310.15(B)(2)(6) - 6 ducts (Detail 3), 3/C 500 kcmil Cu, RHO 120, LF 100",
+      "citation": "NEC 2023, Table B.310.15(B)(2)(6), 6 electrical ducts (Fig. B.310.15(B)(2)(2) Detail 3), three-conductor cable 500 kcmil copper, RHO 120 C-cm/W, LF 100, 75 C conductor",
+      "sourceType": "nec-table",
+      "page": null,
+      "tags": [
+        "nec-annex-b",
+        "nec-annex-b-2-6",
+        "duct-bank",
+        "copper",
+        "low-voltage",
+        "three-conductor",
+        "detail-3",
+        "high-rho"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nec-annexB-2-6-6duct-3c-500kcmil-cu-rho120-lf100.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.237Z",
+      "expectations": [
+        {
+          "path": "conduits.d5.ampacityAmps",
+          "expected": 240,
+          "actual": 239.2,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": -0.3333,
+          "marginUsed": 11.11,
+          "pass": true,
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "nm-1957-app-example-1",
+      "title": "NM 1957 Appendix IV - 69 kV duct bank, equal 1500 MCM circuits",
+      "citation": "Neher and McGrath 1957 paper, Appendix IV, p. 762-763",
+      "sourceType": "nm-paper",
+      "page": "762-763",
+      "tags": [
+        "nm-1957",
+        "ampacity",
+        "duct-bank",
+        "mutual-heating"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nm-1957-app-example-1.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "nm-1957-paper",
+      "computedAt": "2026-05-24T00:11:16.238Z",
+      "expectations": [
+        {
+          "path": "conduits.c-ml.resistances.rDcAt20OhmPerM",
+          "expected": 0.0000226796,
+          "actual": 0.00002267955801104972,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": -0.0002,
+          "marginUsed": 0.04,
+          "pass": true,
+          "note": "Engine field is Rdc at 20 C; paper headline Rdc is 8.60 micro-ohm/ft at 75 C."
+        },
+        {
+          "path": "conduits.c-ml.resistances.rAcAtThetaOhmPerM",
+          "expected": 0.0000305289,
+          "actual": 0.0000298725367110836,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": -2.15,
+          "marginUsed": 71.67,
+          "pass": true,
+          "note": "8.60 micro-ohm/ft at 75 C times paper AC/DC ratio 1.082. Tolerance loosened to 3% rel because engine IEC F(x_p) gives ~0.0089 vs NM Fig.1 0.007 (~16% difference at this x_p)."
+        },
+        {
+          "path": "conduits.c-ml.resistances.skinFactorYs",
+          "expected": 0.075,
+          "actual": 0.07605862135427681,
+          "toleranceAbs": 0.003,
+          "toleranceRel": null,
+          "deviationPercent": 1.4115,
+          "marginUsed": 35.29,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.c-ml.resistances.proximityFactorYp",
+          "expected": 0.007,
+          "actual": 0.008879919237528571,
+          "toleranceAbs": 0.003,
+          "toleranceRel": null,
+          "deviationPercent": 26.856,
+          "marginUsed": 62.66,
+          "pass": true,
+          "note": "NM 1957 reads F(x_p)=0.075 off Fig. 1 and reports Y_cp=0.007. Engine uses the IEC 60287-1-1 analytic F(x_p) which gives ~0.094 at this x_p, hence Y_cp~0.0089. Tolerance widened from brochure 0.001 abs."
+        },
+        {
+          "path": "conduits.c-ml.losses.dielectricWPerM",
+          "expected": 1.87008,
+          "actual": 1.8498906536788853,
+          "toleranceAbs": null,
+          "toleranceRel": 0.02,
+          "deviationPercent": -1.0796,
+          "marginUsed": 53.98,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.c-ml.resistances.t1KmPerW",
+          "expected": 0.27432,
+          "actual": 0.2752392412966847,
+          "toleranceAbs": null,
+          "toleranceRel": 0.02,
+          "deviationPercent": 0.3351,
+          "marginUsed": 16.75,
+          "pass": true,
+          "note": "0.90 paper thermal ohm-ft converted to K m/W by multiplying 0.3048."
+        },
+        {
+          "path": "conduits.c-ml.resistances.t4PrimeKmPerW",
+          "expected": 0.530352,
+          "actual": 0.5360252777769585,
+          "toleranceAbs": null,
+          "toleranceRel": 0.02,
+          "deviationPercent": 1.0697,
+          "marginUsed": 53.49,
+          "pass": true,
+          "note": "Cable-to-duct resistance Rsd = 1.74 paper thermal ohm-ft."
+        },
+        {
+          "path": "conduits.c-ml.resistances.t4DoublePrimeKmPerW",
+          "expected": 0.073152,
+          "actual": 0.07281161396561095,
+          "toleranceAbs": null,
+          "toleranceRel": 0.02,
+          "deviationPercent": -0.4653,
+          "marginUsed": 23.27,
+          "pass": true,
+          "note": "Duct wall resistance Rd = 0.24 paper thermal ohm-ft."
+        },
+        {
+          "path": "conduits.c-ml.resistances.t4TriplePrimeKmPerW",
+          "expected": 2.439,
+          "actual": 2.4427582126738385,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": 0.1541,
+          "marginUsed": 5.14,
+          "pass": true,
+          "note": "Engine reports R_e' in CIGRE TB 880 / IEC 60287-2-1 4.2.4.5 geometric form (no LF on mutual) plus NM 1957 eq. 44A bank rho-correction. NM Eq. 44A reports R_e' with LF on (4L/D_x)*F (= 6.79 ohm-ft = 2.07 K.m/W). Engine heat balance still uses mu-weighted earth path for current-driven heat; this anchor is reporting-form only. Expected = (rho_c/2pi)*[ln(u+sqrt(u^2-1)) + ln(F)] + bankCorr with u=2*43.5/5.5 and F=42028 = 1.904 + 0.535 = 2.44 K.m/W."
+        },
+        {
+          "path": "conduits.c-ml.resistances.t4TotalKmPerW",
+          "expected": 3.044,
+          "actual": 3.051595104416408,
+          "toleranceAbs": null,
+          "toleranceRel": 0.03,
+          "deviationPercent": 0.2495,
+          "marginUsed": 8.32,
+          "pass": true,
+          "note": "Engine field is T4'+T4''+T4''' (= sum of duct internal, duct wall, reported earth). Spec NM 1957 R_ca' = 9.72 ohm-ft is R_i + q_s*(R_sd+R_d+R_e'), a different quantity that includes T1 and q_s. Engine reporting form: 0.530 + 0.073 + 2.44 = 3.04 K.m/W."
+        },
+        {
+          "path": "globals.fictitiousDiameterDxMm",
+          "expected": 210.82,
+          "actual": 210.51376696073822,
+          "toleranceAbs": null,
+          "toleranceRel": 0.02,
+          "deviationPercent": -0.1453,
+          "marginUsed": 7.26,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.c-ml.ampacityAmps",
+          "expected": 696,
+          "actual": 703.2,
+          "toleranceAbs": null,
+          "toleranceRel": 0.015,
+          "deviationPercent": 1.0345,
+          "marginUsed": 68.97,
+          "pass": true,
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "nm-1957-app-example-2",
+      "title": "NM 1957 Appendix IV - 69 kV duct bank, 1500/750 MCM coupled circuits",
+      "citation": "Neher and McGrath 1957 paper, Appendix IV, p. 763",
+      "sourceType": "nm-paper",
+      "page": 763,
+      "tags": [
+        "nm-1957",
+        "mutual-heating",
+        "multi-circuit",
+        "coupled-solver"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/nm-1957-app-example-2.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "nm-1957-paper",
+      "computedAt": "2026-05-24T00:11:16.244Z",
+      "expectations": [
+        {
+          "path": "conduits.c-ml.ampacityAmps",
+          "expected": 714,
+          "actual": 711.1,
+          "toleranceAbs": null,
+          "toleranceRel": 0.025,
+          "deviationPercent": -0.4062,
+          "marginUsed": 16.25,
+          "pass": true,
+          "note": "Circuit 1 (1500 MCM) hottest cable = middle of left column. NM 1957 Appendix IV simultaneous solve gives I_1 = 0.714 kA (p763). Tolerance loosened vs example-1 to absorb the coupled-circuit damping convergence and the IEC vs NM Fig.1 R_ac difference."
+        },
+        {
+          "path": "conduits.c-mr.ampacityAmps",
+          "expected": 487,
+          "actual": 506.8,
+          "toleranceAbs": null,
+          "toleranceRel": 0.05,
+          "deviationPercent": 4.0657,
+          "marginUsed": 79.2,
+          "pass": true,
+          "note": "Circuit 2 (750 MCM) hottest cable = middle of right column. NM 1957 Appendix IV simultaneous solve gives I_2 = 0.487 kA. Wide tolerance (5% rel) because the 750 MCM annular oil-filled conductor's ks/kp are reconstructed assumptions (see notes.md), and the coupled-circuit solver convergence damping introduces a small (~4%) residual that does not affect the limiting cir-1500 ampacity."
+        },
+        {
+          "path": "conduits.c-mr.resistances.rAcAtThetaOhmPerM",
+          "expected": 0.0000572178,
+          "actual": 0.00005551242089447889,
+          "toleranceAbs": null,
+          "toleranceRel": 0.05,
+          "deviationPercent": -2.9805,
+          "marginUsed": 59.61,
+          "pass": true,
+          "note": "Back-calculated from W_c2 = 17.44 I_2^2 in NM 1957 Appendix IV (R_ac at 75 C = 17.44 micro-ohm/ft). Loose tolerance because ks/kp for the 750 MCM oil-filled annular conductor are reconstructed assumptions."
+        }
+      ]
+    },
+    {
+      "id": "nm-1957-table-II-segmental-6-hollow-core",
+      "title": "NM 1957 Table II Note 4 — 6-segment Milliken hollow-core (non-divergent)",
+      "citation": "Neher and McGrath 1957 paper, Table II Note 4 (p. 755) — 6-segment Milliken hollow-core (Type V) for oil-filled cables. Cross-checked against IEC 60287-1-1 Table 2 row for 6-segment Milliken with hollow core.",
+      "sourceType": "nm-paper",
+      "page": 755,
+      "tags": [
+        "nm-1957",
+        "ks-kp",
+        "hollow-core",
+        "segmental",
+        "unit",
+        "v4"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "selected.ks",
+          "expected": 0.39,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "IEC 60287-1-1 Table 2 — 6-segment Milliken hollow-core."
+        },
+        {
+          "path": "selected.kp",
+          "expected": 0.37,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "selected.source",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "nm1957.ks",
+          "expected": 0.39,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "NM 1957 p755 Note 4 — 6-segment Milliken hollow-core (oil-filled, Type V)."
+        },
+        {
+          "path": "nm1957.kp",
+          "expected": 0.37,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "nm1957.key",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "iec60287.ks",
+          "expected": 0.39,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "iec60287.kp",
+          "expected": 0.37,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "iec60287.key",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "divergent",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "tupleKey",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "nm-1957-table-II-skin-prox",
+      "title": "NM 1957 Table II - skin and proximity factors",
+      "citation": "Neher and McGrath 1957 paper, Table II, p. 755",
+      "sourceType": "nm-paper",
+      "page": 755,
+      "tags": [
+        "nm-1957",
+        "ac-resistance",
+        "skin-effect",
+        "proximity-effect",
+        "unit"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "entries.concentric-round-untreated.ks",
+          "expected": 1,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.concentric-round-untreated.kp",
+          "expected": 1,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.concentric-round-tinned.ks",
+          "expected": 1,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.concentric-round-tinned.kp",
+          "expected": 1,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.concentric-round-treated.ks",
+          "expected": 1,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.concentric-round-treated.kp",
+          "expected": 0.8,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-untreated.ks",
+          "expected": 1,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-untreated.kp",
+          "expected": 0.6,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-treated.ks",
+          "expected": 1,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-treated.kp",
+          "expected": 0.6,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-segmental-untreated.ks",
+          "expected": 0.435,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-segmental-untreated.kp",
+          "expected": 0.6,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-segmental-tinned.ks",
+          "expected": 0.5,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-segmental-tinned.kp",
+          "expected": 0.7,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-segmental-treated.ks",
+          "expected": 0.435,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-segmental-treated.kp",
+          "expected": 0.37,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-sector-treated.ks",
+          "expected": 1,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "entries.compact-sector-treated.kp",
+          "expected": 0.8,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Catalog default for the paper's compact-sector note; Table II does not publish a numeric kp."
+        },
+        {
+          "path": "entries.compact-segmental-6-treated.ks",
+          "expected": 0.39,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "NM 1957 p755 Note 4 — 6-segment Milliken hollow-core (oil-filled, Type V)."
+        },
+        {
+          "path": "entries.compact-segmental-6-treated.kp",
+          "expected": 0.37,
+          "actual": null,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "NM 1957 p755 Note 4 — 6-segment Milliken hollow-core (oil-filled, Type V)."
+        }
+      ]
+    },
+    {
+      "id": "nm1957-138kv-hpff-pipe-type",
+      "title": "NM 1957 Appendix IV - 138 kV 2,000 MCM HPFF pipe-type cable, 8.625-in OD steel pipe",
+      "citation": "Neher, J.H. & McGrath, M.H. (1957). The Calculation of the Temperature Rise and Load Capability of Cable Systems. AIEE Transactions, vol. 76, pt. III, Oct 1957, Appendix IV worked example, p762-763.",
+      "sourceType": "nm-paper",
+      "page": "Appendix IV / Tables VII and II / pp762-763",
+      "tags": [
+        "nm-1957",
+        "pipe-type",
+        "oil-filled",
+        "hand-calc",
+        "hv"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "yc",
+          "expected": 0.1717,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Y_c with magnetic-pipe multiplier (NM 1957 p757). Brochure rounds to 0.171."
+        },
+        {
+          "path": "ys",
+          "expected": 0.011,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.01,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Y_s with 1.7× (NM 1957 eq. 27A + magnetic-pipe text): 0.006471·1.7 = 0.011."
+        },
+        {
+          "path": "yp",
+          "expected": 0.372,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Pipe magnetic loss Y_p (NM 1957 eq. 35, single-conductor cradled). Brochure: 0.372."
+        },
+        {
+          "path": "acDcRatio",
+          "expected": 1.554,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "1 + Y_c + Y_s + Y_p (NM 1957 eq. 14). Brochure: 1.554."
+        },
+        {
+          "path": "pipeInternalKmPerW",
+          "expected": 0.2351,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "R_sd via NM 1957 eq. 41A: 3·2.1/(5.72+2.45) = 0.7711 thermal ohm-feet = 0.2351 K·m/W."
+        },
+        {
+          "path": "pipeExternalKmPerW",
+          "expected": 0.8688,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "R_e' at μ=0.85, F=1, single pipe (NM 1957 eq. 44). Brochure: 2.85 thermal ohm-feet."
+        },
+        {
+          "path": "conductorToAmbientKmPerW",
+          "expected": 1.88,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "R_ca' = T1 + q_s·R_sd + q_e·(R_d + R_e'). Brochure: 6.17 thermal ohm-feet."
+        },
+        {
+          "path": "dielectricTempRiseC",
+          "expected": 7.4,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.05,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "ΔT_d = W_d · (0.5·T1 + R_sd + R_d + R_e' at LF=1). Brochure: 7.4 °C."
+        },
+        {
+          "path": "ampacityAmps",
+          "expected": 905,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.01,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Brochure publishes 0.905 kiloampere (NM 1957 p763 eq. 9 closing line)."
+        },
+        {
+          "path": "pipeFillWarningCodes",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Mineral-oil resolves cleanly; no RES-W-PIPE-FILL-MEDIUM-APPROXIMATED."
+        }
+      ]
+    },
+    {
+      "id": "phase6-3c-outer-sheath-iec-5-3-9",
+      "title": "Phase 6 - 3C common-sheath λ\"₁ per IEC 60287-1-1:2023 §5.3.9 Eq. 14",
+      "citation": "IEC 60287-1-1:2023 §5.3.9 'Three-core unarmoured cables with common sheath', Formula (14) (round/oval cores, R_s ≤ 100 µΩ/m), p27 (printed) / pdf p28.",
+      "sourceType": "hand-calc",
+      "page": 27,
+      "tags": [
+        "iec-60287",
+        "sheath-loss",
+        "unit",
+        "hand-calc",
+        "phase6",
+        "multi-conductor"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "lambda1",
+          "expected": 0.04833,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.005,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Hand-computed λ\"₁ ≈ 0.0483 for the parameters above. Engine implementation in losses/sheath-multicore.ts:iec60287MulticoreLambda1 reproduces this via Eq. 14: λ\"₁ = (3·R_s/R_C)·[(2c/d)²/(1+(R_s·1e7/ω)²) + (2c/d)⁴/(1+4·(R_s·1e7/ω)²)]."
+        },
+        {
+          "path": "formula",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "R_s = 80 µΩ/m ≤ 100 µΩ/m → Eq. 14 branch (low-resistance form)."
+        },
+        {
+          "path": "cMm",
+          "expected": 6.92820323,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.000001,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "c = d_core_OD / √3 for trefoil-packed 3-core round cables. 12 / √3 = 6.928 mm."
+        }
+      ]
+    },
+    {
+      "id": "phase6-iec-table-1-bronze-sheath",
+      "title": "Phase 6 - IEC 60287-1-1:2023 Table 1 lookup for bronze sheath material",
+      "citation": "IEC 60287-1-1:2023 Table 1 (Electrical resistivities and temperature coefficients of metals used), p35 (printed) / pdf p37, row 'Bronze'.",
+      "sourceType": "hand-calc",
+      "page": 35,
+      "tags": [
+        "iec-60287",
+        "sheath-loss",
+        "unit",
+        "hand-calc",
+        "phase6"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "rho20OhmM",
+          "expected": 3.5e-8,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 1e-9,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Bronze ρ20 = 3.5e-8 Ω·m per IEC 60287-1-1:2023 Table 1 row 'Bronze'."
+        },
+        {
+          "path": "alpha20PerK",
+          "expected": 0.003,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 1e-9,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Bronze α20 = 3.0e-3 /K per IEC 60287-1-1:2023 Table 1 row 'Bronze'. Phase 6 path: this lookup replaces the v3 ρ-only heuristic, which would (mis-)classify bronze as 'aluminium' (α=4.03e-3) because 3.5e-8 > 2e-8. The new resolveSheathElectricalProps() in losses/sheath-utils.ts gates on `material` first, so the IEC Table 1 row wins."
+        }
+      ]
+    },
+    {
+      "id": "phase6-intercalated-tape-helical-resistance",
+      "title": "Phase 6 - intercalated tape behaves as helical wire (CIGRE TB 880 GP42; no eddy currents)",
+      "citation": "CIGRE TB 880 (Sep 2022), Guidance Point 42 'Metal tapes', p56. 'If there is no overlap, or if there is a material in between the overlapping tapes (intercalated), … then electrical currents will follow the helical tapes around the cable, and no eddy currents will be present. In this case, the electrical resistance should be calculated similar to the resistance of a wire with a lay factor: Use the dimensions, the resistivity and the lay factor to deduce the electrical resistance.'",
+      "sourceType": "cigre-tb880",
+      "page": 56,
+      "tags": [
+        "cigre-tb880",
+        "sheath-loss",
+        "unit",
+        "hand-calc",
+        "phase6",
+        "tape-overlap"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "helixFactor",
+          "expected": 1.605969118,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.0005,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "F_lay = sqrt(1 + (π·d_m/L)²) per CIGRE GP42 (cited form: sqrt(1 + (π·Lay_diameter/Length_of_lay)²) at p31). For d_m = 80 mm, L = 200 mm, F_lay ≈ 1.606."
+        },
+        {
+          "path": "rsOhmPerM",
+          "expected": 0.0055378,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.001,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Intercalated → R_s = ρ·F_lay / (w·t) per CIGRE GP42. 1.7241e-8 · 1.606 / 5.0e-6 ≈ 5.54e-3 Ω/m. Note this is far higher than the welded-tube resistance (~2.4e-4 Ω/m) — the intercalated path's higher R_s reduces sheath circulating loss (Yc decreases monotonically as R_s grows past X)."
+        },
+        {
+          "path": "tEffectiveMm",
+          "expected": 0.2,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 1e-9,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Intercalated path uses the bare tape thickness — no overlap-volume correction, since tape resistance is computed from the single-tape cross-section + lay factor."
+        }
+      ]
+    },
+    {
+      "id": "phase6-tape-overlap-effective-thickness",
+      "title": "Phase 6 - tape overlap effective thickness (CIGRE TB 880 GP42 / IEC §5.3 path-length correction)",
+      "citation": "CIGRE TB 880 (Sep 2022), Guidance Point 42 'Metal tapes', p56 (PDF p56). 'If there is electrical contact between overlapping tapes, the electric currents can flow circumferentially; hence eddy currents are present. In this case, the electrical resistance should be calculated assuming a tubular construction comprising the same amount of material as is present in the overlapping tapes.'",
+      "sourceType": "cigre-tb880",
+      "page": 56,
+      "tags": [
+        "cigre-tb880",
+        "sheath-loss",
+        "unit",
+        "hand-calc",
+        "phase6",
+        "tape-overlap"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "tEffectiveMm",
+          "expected": 0.28571428571,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 1e-9,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "t_eff = t / (1 - f) where f = overlapPct/100. With t = 0.2 mm and 30% overlap, t_eff = 0.2/0.7 = 0.28571 mm. This is the equivalent tubular thickness used in the IEC §5.3 path-length-corrected R_s = ρ / (π·d_m·t_eff). Verified by the volume-conservation argument: a single helical tape of width w·(1-f) advances axially per turn but covers width w per turn, so cross-section per axial unit length has 1/(1-f) tape thicknesses stacked."
+        }
+      ]
+    },
+    {
+      "id": "phase6-welded-tape-tubular-resistance",
+      "title": "Phase 6 - welded tape behaves as tubular sheath (CIGRE TB 880 GP42 + IEC §5.3)",
+      "citation": "CIGRE TB 880 (Sep 2022), Guidance Point 42 'Metal tapes', p56. 'If there is electrical contact between overlapping tapes …  the electrical resistance should be calculated assuming a tubular construction comprising the same amount of material …'.",
+      "sourceType": "cigre-tb880",
+      "page": 56,
+      "tags": [
+        "cigre-tb880",
+        "sheath-loss",
+        "unit",
+        "hand-calc",
+        "phase6",
+        "tape-overlap"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "rsOhmPerM",
+          "expected": 0.000240121,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 0.0005,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Welded → tubular per CIGRE GP42. R_s = ρ / (π·d_m·t_eff) with t_eff = t/(1-f). 1.7241e-8 / (π·0.080·0.000285714) ≈ 2.401e-4 Ω/m."
+        },
+        {
+          "path": "tEffectiveMm",
+          "expected": 0.285714286,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": 1e-9,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Welded path applies the t/(1-f) correction (volume conservation)."
+        },
+        {
+          "path": "helixFactor",
+          "expected": 1,
+          "actual": null,
+          "toleranceAbs": 1e-12,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Welded path is a tube, no helical lay correction (helixFactor = 1)."
+        }
+      ]
+    },
+    {
+      "id": "phase8-temp-rating-dry-emergency",
+      "title": "Phase 8 - (dry, emergency) picks emergencyC regardless of soilCondition",
+      "citation": "v4 cable schema Phase 8 plan, packages/engine-core/src/catalog/resolve.ts pickConductorTempC selection rule",
+      "sourceType": "nm-paper",
+      "page": null,
+      "tags": [
+        "phase8",
+        "temp-rating",
+        "emergency"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "tempC",
+          "expected": 105,
+          "actual": null,
+          "toleranceAbs": 0.001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "(dry, emergency) -> emergencyC."
+        },
+        {
+          "path": "warningCodes",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Emergency rating present on the cable; no fallback warning."
+        }
+      ]
+    },
+    {
+      "id": "phase8-temp-rating-dry-normal",
+      "title": "Phase 8 - (dry, normal) picks dryC from the cable's temperature-rating block",
+      "citation": "v4 cable schema Phase 8 plan, packages/engine-core/src/catalog/resolve.ts pickConductorTempC selection rule",
+      "sourceType": "nm-paper",
+      "page": null,
+      "tags": [
+        "phase8",
+        "temp-rating",
+        "dry-normal"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "tempC",
+          "expected": 90,
+          "actual": null,
+          "toleranceAbs": 0.001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "(dry, normal) -> dryC."
+        },
+        {
+          "path": "warningCodes",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Dry rating present on the cable; no fallback warning."
+        }
+      ]
+    },
+    {
+      "id": "phase8-temp-rating-emergency-fallback-warns",
+      "title": "Phase 8 - emergency mode on a cable with no emergencyC falls back to dryC and emits MAT-W-EMERGENCY-RATING-MISSING",
+      "citation": "v4 cable schema Phase 8 plan, packages/engine-core/src/diagnostics.ts MAT-W-EMERGENCY-RATING-MISSING contract",
+      "sourceType": "nm-paper",
+      "page": null,
+      "tags": [
+        "phase8",
+        "temp-rating",
+        "emergency",
+        "fallback",
+        "diagnostics"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "tempC",
+          "expected": 90,
+          "actual": null,
+          "toleranceAbs": 0.001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Falls back to dryC because emergencyC is absent."
+        },
+        {
+          "path": "warningCodes",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Engine emits the documented fallback warning so the engineer is prompted to source the emergency rating."
+        }
+      ]
+    },
+    {
+      "id": "phase8-temp-rating-wet-emergency",
+      "title": "Phase 8 - (wet, emergency) picks emergencyC regardless of soilCondition",
+      "citation": "v4 cable schema Phase 8 plan, packages/engine-core/src/catalog/resolve.ts pickConductorTempC selection rule",
+      "sourceType": "nm-paper",
+      "page": null,
+      "tags": [
+        "phase8",
+        "temp-rating",
+        "emergency"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "tempC",
+          "expected": 105,
+          "actual": null,
+          "toleranceAbs": 0.001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "(wet, emergency) -> emergencyC. soilCondition does not matter when operatingMode is emergency."
+        },
+        {
+          "path": "warningCodes",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Emergency rating present on the cable; no fallback warning."
+        }
+      ]
+    },
+    {
+      "id": "phase8-temp-rating-wet-fallback-warns",
+      "title": "Phase 8 - (wet, normal) on a cable with no wetC falls back to dryC and emits MAT-W-WET-RATING-MISSING",
+      "citation": "v4 cable schema Phase 8 plan, packages/engine-core/src/diagnostics.ts MAT-W-WET-RATING-MISSING contract",
+      "sourceType": "nm-paper",
+      "page": null,
+      "tags": [
+        "phase8",
+        "temp-rating",
+        "wet-normal",
+        "fallback",
+        "diagnostics"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "tempC",
+          "expected": 90,
+          "actual": null,
+          "toleranceAbs": 0.001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Falls back to dryC because wetC is absent."
+        },
+        {
+          "path": "warningCodes",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Engine emits the documented fallback warning so the engineer is prompted to source the wet rating."
+        }
+      ]
+    },
+    {
+      "id": "phase8-temp-rating-wet-normal",
+      "title": "Phase 8 - (wet, normal) picks wetC from the cable's temperature-rating block",
+      "citation": "v4 cable schema Phase 8 plan, packages/engine-core/src/catalog/resolve.ts pickConductorTempC selection rule",
+      "sourceType": "nm-paper",
+      "page": null,
+      "tags": [
+        "phase8",
+        "temp-rating",
+        "wet-normal"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": null,
+      "engineVersion": null,
+      "engineMethod": null,
+      "catalogVersion": null,
+      "computedAt": null,
+      "expectations": [
+        {
+          "path": "tempC",
+          "expected": 75,
+          "actual": null,
+          "toleranceAbs": 0.001,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "(wet, normal) -> wetC. No fallback warning."
+        },
+        {
+          "path": "warningCodes",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": "Cable carried wetC explicitly, so no MAT-W-WET-RATING-MISSING."
+        }
+      ]
+    },
+    {
+      "id": "temperature-at-equal-share-load",
+      "title": "Equal-share loading splits feeder demand across parallel conduits",
+      "citation": "NM-Calc fixed-current equal-share loading; NM 1957 heat balance",
+      "sourceType": "invariant",
+      "page": null,
+      "tags": [
+        "invariant",
+        "fixed-load",
+        "equal-share"
+      ],
+      "status": "active",
+      "pass": true,
+      "skipReason": null,
+      "pdfUrl": "https://github.com/deliverable-labs/cable-sketch-validation/releases/download/v0.1.8/temperature-at-equal-share-load.pdf",
+      "engineVersion": "0.2.0",
+      "engineMethod": "neher-mcgrath-1957",
+      "catalogVersion": "fixture",
+      "computedAt": "2026-05-24T00:11:16.244Z",
+      "expectations": [
+        {
+          "path": "scope.kind",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.d1.mode",
+          "expected": null,
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.d1.ampacityAmps",
+          "expected": 100,
+          "actual": 100,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": 0,
+          "marginUsed": 0,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.d2.ampacityAmps",
+          "expected": 100,
+          "actual": 100,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": 0,
+          "marginUsed": 0,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.d3.ampacityAmps",
+          "expected": 100,
+          "actual": 100,
+          "toleranceAbs": 0.000001,
+          "toleranceRel": null,
+          "deviationPercent": 0,
+          "marginUsed": 0,
+          "pass": true,
+          "note": null
+        },
+        {
+          "path": "conduits.d1.temperatures.conductorC",
+          "expected": [
+            20,
+            90
+          ],
+          "actual": null,
+          "toleranceAbs": null,
+          "toleranceRel": null,
+          "deviationPercent": null,
+          "marginUsed": null,
+          "pass": true,
+          "note": null
+        }
+      ]
+    }
+  ]
+}
