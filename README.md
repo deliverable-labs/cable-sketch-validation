@@ -5,13 +5,13 @@
 Public validation reports for the current CableSketch Pro thermal cable sizing application.
 
 <!-- LATEST-RESULTS-START -->
-## Latest validation results — [v0.2.4](reports/v0.2.4/summary.md) · 2026-05-30
+## Latest validation results — [v0.2.5](reports/v0.2.5/summary.md) · 2026-05-31
 
 | Total | Active | Passing | Expected fail | Skipped | Failing |
 | ----- | ------ | ------- | ------------- | ------- | ------- |
 | 70 | 62 | 62 | 0 | 8 | 0 |
 
-[Full report →](reports/v0.2.4/summary.md) · [Machine-readable JSON →](reports/v0.2.4/report.json)
+[Full report →](reports/v0.2.5/summary.md) · [Machine-readable JSON →](reports/v0.2.5/report.json)
 <!-- LATEST-RESULTS-END -->
 
 ## License
